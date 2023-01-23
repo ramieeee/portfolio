@@ -1,0 +1,42 @@
+// font
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.Home {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+
+  .vidContainer {
+    height: 100%;
+    .video {
+      height: 100%;
+    }
+  }
+
+  .textDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    color: white;
+    mix-blend-mode: multiply;
+
+    .textTop {
+      font-family: anton !important;
+      font-size: 20vh;
+      font-weight: 900;
+    }
+
+    .textBottom {
+      font-family: anton !important;
+      font-size: 20vh;
+      font-weight: 900;
+    }
+  }
+}
