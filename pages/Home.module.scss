@@ -31,12 +31,27 @@
       font-family: anton !important;
       font-size: 20vh;
       font-weight: 900;
+      animation-name: textAni;
+      animation-direction: normal;
+      animation-duration: 7s;
     }
 
     .textBottom {
       font-family: anton !important;
       font-size: 20vh;
       font-weight: 900;
+      animation-name: textAni;
+      animation-direction: normal;
+      animation-duration: 7s;
     }
+  }
+}
+
+@keyframes textAni {
+  0% {
+    font-size: 23vh;
+  }
+  100% {
+    font-size: 20vh;
   }
 }

@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.Home}>
+      <div className={styles.Home} onClick={() => console.log("hey")}>
         <div className={styles.vidContainer}>
           <video className={styles.video} loop autoPlay muted>
             <source src="/sampleVid.webm" type="video/mp4" />
