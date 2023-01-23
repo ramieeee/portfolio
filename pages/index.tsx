@@ -1,8 +1,14 @@
 import Head from "next/head";
 import styles from "./Home.module.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+
+  const [homeClassName, setHomeClassName] = useState<string | null>("home");
+
   return (
     <>
       <Head>
@@ -12,7 +18,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.Home} onClick={() => console.log("hey")}>
+      {/* <Link href="/workspace"> */}
+      <div
+        className={homeClassName === "home" ? styles.Home : styles.HomeSlideOut}
+        onClick={() => {
+          setHomeClassName(null);
+          setTimeout(() => {
+            router.push("/workspace");
+          }, 1000);
+        }}
+      >
         <div className={styles.vidContainer}>
           <video className={styles.video} loop autoPlay muted>
             <source src="/sampleVid.webm" type="video/mp4" />
@@ -23,6 +38,7 @@ export default function Home() {
           <p className={styles.textBottom}>YEON</p>
         </div>
       </div>
+      {/* </Link> */}
     </>
   );
 }

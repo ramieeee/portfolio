@@ -33,6 +33,7 @@
       font-weight: 900;
       animation-name: textAni;
       animation-direction: normal;
+      animation-fill-mode: forwards;
       animation-duration: 7s;
     }
 
@@ -42,9 +43,19 @@
       font-weight: 900;
       animation-name: textAni;
       animation-direction: normal;
+      animation-fill-mode: forwards;
       animation-duration: 7s;
     }
   }
+}
+
+.HomeSlideOut {
+  @extend .Home;
+  animation-name: pageSlideOut;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.21, 0.88, 0.87, 0.94);
 }
 
 @keyframes textAni {
@@ -53,5 +64,14 @@
   }
   100% {
     font-size: 20vh;
+  }
+}
+
+@keyframes pageSlideOut {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
   }
 }
