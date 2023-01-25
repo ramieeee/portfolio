@@ -24,7 +24,7 @@ export default function Landing() {
           setHomeClassName(null);
           setTimeout(() => {
             router.push("/intro");
-          }, 1000);
+          }, 300);
         }}
       >
         <div className={styles.vidContainer}>

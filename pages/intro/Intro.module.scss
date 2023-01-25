@@ -1,34 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Antic&display=swap");
+
 .Intro {
   width: 100vw;
-  height: 100vh;
-}
+  height: 1000px;
 
-.welcomeText {
-  font-size: 4vw;
-  margin-top: 10vw;
-}
+  .logo {
+    margin: 16px 0 0 16px;
+  }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  height: 20rem;
-  min-width: 30rem;
-  align-items: center;
-  justify-content: space-around;
-}
+  .textContainer {
+    margin: 5vw 0 0 80px;
 
-.infoContainer {
-  display: flex;
-  height: 100%;
-  width: 14rem;
-  margin-top: 20vw;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
-  border: white 1px solid;
-}
+    .glowText {
+      margin: 0 0 4vw 10rem;
+      font-family: antic;
+      font-size: 2rem;
+      color: #a2d2ff;
+      text-shadow: 0 0 10px #5283ff, 0 0 20px #5283ff, 0 0 30px #5283ff;
+    }
 
-.infoText {
-  text-align: center;
-  font-size: 1rem;
+    .introName {
+      font-size: 5vw;
+      font-family: antic;
+      margin-left: 30px;
+      color: #a2d2ff;
+      text-shadow: 0 0 10px #5283ff, 0 0 20px #5283ff, 0 0 30px #5283ff;
+    }
+
+    .introTextContainer {
+      display: flex;
+      margin-top: 30px;
+
+      .introTextLeft {
+        font-size: 1rem;
+        margin-right: 30px;
+        text-align: right;
+        width: 200px;
+      }
+      .introTextRight {
+        font-size: 2rem;
+        width: 350px;
+      }
+    }
+
+    .introTextBottomContainer {
+      margin-top: 40px;
+      width: 600px;
+      .introTextBottom {
+        font-size: 2vw;
+        .introTextBottomGlow {
+          font-family: antic;
+          color: #ff9b9b;
+          text-shadow: 0 0 10px #ff5353, 0 0 20px #ff5353, 0 0 30px #ff5353;
+          // cursor: pointer;
+        }
+      }
+    }
+  }
 }
