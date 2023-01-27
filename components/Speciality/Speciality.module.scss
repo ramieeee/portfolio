@@ -1,0 +1,19 @@
+.Speciality {
+  width: 100vw;
+  height: 100vh;
+
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+    .specialityBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

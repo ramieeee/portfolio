@@ -7,7 +7,7 @@ import styles from "./Workspace.module.scss";
 
 // components
 import Intro from "@/components/Intro";
-import Interest from "@/components/Interest";
+import Speciality from "@/components/Speciality";
 
 function Main() {
   // const testRef = useRef<HTMLElement>(null);
@@ -30,7 +30,7 @@ function Main() {
   return (
     <>
       <Intro />
-      <Interest />
+      <Speciality />
     </>
   );
 }
