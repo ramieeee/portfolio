@@ -23,7 +23,7 @@ export default function Landing() {
         onClick={() => {
           setHomeClassName(null);
           setTimeout(() => {
-            router.push("/intro");
+            router.push("/workspace");
           }, 300);
         }}
       >
