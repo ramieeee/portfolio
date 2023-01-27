@@ -2,23 +2,21 @@
 
 .Intro {
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .textContainer {
-    margin: 5vw 0 0 80px;
-
-    .glowText {
-      margin: 0 0 4vw 10rem;
-      font-family: antic !important;
-      font-size: 2rem;
-      color: #a2d2ff;
-      text-shadow: 0 0 10px #5283ff, 0 0 20px #5283ff, 0 0 30px #5283ff;
-    }
+    margin: 5vw 0 0 0;
 
     .introName {
       font-size: 5vw;
+      width: 100%;
+      text-align: center;
+      padding-right: 250px;
       font-family: antic !important;
-      margin-left: 30px;
       color: #a2d2ff;
       text-shadow: 0 0 10px #5283ff, 0 0 20px #5283ff, 0 0 30px #5283ff;
     }

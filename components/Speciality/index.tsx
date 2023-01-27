@@ -2,7 +2,7 @@ import styles from "./Speciality.module.scss";
 import AiIcon from "@/components/AiIcon";
 import CodingIcon from "@/components/CodingIcon";
 
-const Line = () => {
+const Line = (): JSX.Element => {
   return (
     <>
       <div
@@ -20,7 +20,9 @@ export default function Speciality(): JSX.Element {
   return (
     <>
       <div className={styles.Speciality}>
-        <span className={styles.SpecialityGlowText}>My Speciality</span>
+        <div className={styles.specialityGlowText}>
+          <span>My Speciality</span>
+        </div>
 
         <div className={styles.container}>
           <div className={styles.specialityBox}>

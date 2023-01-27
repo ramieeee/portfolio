@@ -8,6 +8,7 @@ import styles from "./Workspace.module.scss";
 // components
 import Intro from "@/components/Intro";
 import Speciality from "@/components/Speciality";
+import Projects from "@/components/Projects";
 
 function Main() {
   // const testRef = useRef<HTMLElement>(null);
@@ -29,8 +30,10 @@ function Main() {
 
   return (
     <>
+      <span className={styles.logo}>SausageDog</span>
       <Intro />
       <Speciality />
+      <Projects />
     </>
   );
 }

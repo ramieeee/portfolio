@@ -1,0 +1,21 @@
+.Projects {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .projectsGlowText {
+    padding-top: 20%;
+    margin-left: 15vw;
+    color: #f9ffca;
+    text-shadow: 0 0 10px #e4ff34, 0 0 20px #e4ff34, 0 0 30px #e4ff34;
+  }
+
+  .container {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+  }
+}
