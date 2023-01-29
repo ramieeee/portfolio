@@ -14,5 +14,5 @@ model ProjectList {
   id           Int   @default(autoincrement()) @id 
   title        String
   description  String
-  link         String
+  url          String
 }

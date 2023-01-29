@@ -1,6 +1,7 @@
+import { PrismaClient } from "@prisma/client";
 import styles from "./Intro.module.scss";
 
-export default function Intro(): JSX.Element {
+export default function Intro({ data }: any): JSX.Element {
   return (
     <div className={styles.Intro}>
       <div className={styles.textContainer}>
@@ -35,8 +36,22 @@ export default function Intro(): JSX.Element {
               Notion
             </a>
           </span>
+          <button onClick={() => console.log(data)}>test</button>
         </div>
       </div>
     </div>
   );
 }
+
+// export async function getServerSideProps() {
+//   const prisma = new PrismaClient();
+//   const list = await prisma.projectList.findMany();
+//   console.log("here");
+//   console.log(list);
+
+//   return {
+//     props: {
+//       data: list,
+//     },
+//   };
+// }
