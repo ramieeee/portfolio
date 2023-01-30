@@ -1,4 +1,3 @@
-import { PrismaClient } from "@prisma/client";
 import styles from "./Intro.module.scss";
 
 export default function Intro({ data }: any): JSX.Element {
@@ -44,8 +43,7 @@ export default function Intro({ data }: any): JSX.Element {
 }
 
 // export async function getServerSideProps() {
-//   const prisma = new PrismaClient();
-//   const list = await prisma.projectList.findMany();
+
 //   console.log("here");
 //   console.log(list);
 

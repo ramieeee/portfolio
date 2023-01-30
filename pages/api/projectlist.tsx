@@ -1,16 +1,41 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 import type { NextApiRequest, NextApiResponse } from "next";
 
-interface IData {
+interface Data {
   id: number;
+  category: string;
   title: string;
-  description: string;
+  descriptionEng: string;
+  descriptionKor: string;
   url: string;
 }
 
-export default function handler(
+interface ResponseData {
+  message: string;
+  status: number;
+  data: Data[];
+}
+
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<IData>
+  res: NextApiResponse<ResponseData>
 ) {
+  if (req.method === "GET") {
+    const projectList = await prisma.projectList.findMany();
+
+    return res.status(200).json({
+      message: "Data fetching successful",
+      status: 200,
+      data: projectList,
+    });
+    // return res.status(200).json({
+    //   message: "Data fetching successful",
+    //   status: 200,
+    //   data: projectList,
+    // });
+  }
+
   // res.status(200).json({ name: "John Doe" });
 }

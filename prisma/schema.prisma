@@ -10,9 +10,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model ProjectList {
-  id           Int   @default(autoincrement()) @id 
-  title        String
-  description  String
-  url          String
+model projectList {
+  id              Int   @default(autoincrement()) @id 
+  category        String
+  title           String
+  descriptionEng  String
+  descriptionKor  String
+  url             String
 }
