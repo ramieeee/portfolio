@@ -11,6 +11,7 @@ import styles from "./Workspace.module.scss";
 import Intro from "@/components/Intro";
 import Speciality from "@/components/Speciality";
 import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 
 // interface
 import ProjectList from "@/interface/ProjectList";
@@ -44,12 +45,13 @@ function Main({ projectList }: ProjectListData) {
   // }, []);
 
   return (
-    <>
+    <div className={styles.Main}>
       <span className={styles.logo}>SausageDog</span>
       <Intro />
       <Speciality />
       <Projects />
-    </>
+      <Contact />
+    </div>
   );
 }
 

@@ -37,18 +37,24 @@
       }
     }
 
-    .introTextBottomContainer {
-      margin-top: 40px;
-      width: 600px;
-      .introTextBottom {
-        font-size: 2vw;
-        .introTextBottomGlow {
-          font-family: antic;
-          color: #ff9b9b;
-          text-shadow: 0 0 10px #ff5353, 0 0 20px #ff5353, 0 0 30px #ff5353;
-          // cursor: pointer;
-        }
-      }
+    // .introTextBottomContainer {
+    //   margin-top: 40px;
+    //   width: 600px;
+    //   .introTextBottom {
+    //     font-size: 2vw;
+    //     .introTextBottomGlow {
+    //       font-family: antic;
+    //       color: #ff9b9b;
+    //       text-shadow: 0 0 10px #ff5353, 0 0 20px #ff5353, 0 0 30px #ff5353;
+    //     }
+    //   }
+    // }
+
+    .line {
+      display: inline-block;
+      margin: 30px 85% 0 10%;
+      border-bottom: #ffffff solid 1px;
+      width: 40vw;
     }
   }
 }

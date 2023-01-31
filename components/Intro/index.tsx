@@ -16,7 +16,7 @@ export default function Intro({ data }: any): JSX.Element {
             Web developer, software engineer, postgraduate
           </span>
         </div>
-        <div className={styles.introTextBottomContainer}>
+        {/* <div className={styles.introTextBottomContainer}>
           <span className={styles.introTextBottom}>
             If you are interested in my work in details, check out{" "}
             <a
@@ -35,7 +35,9 @@ export default function Intro({ data }: any): JSX.Element {
               Notion
             </a>
           </span>
-        </div>
+        </div> */}
+
+        <div className={styles.line} />
       </div>
     </div>
   );

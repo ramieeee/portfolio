@@ -1,0 +1,15 @@
+.Contact {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .contactGlowText {
+    font-family: var(--font-neon);
+    padding-top: 8%;
+    font-size: 1.5rem;
+    margin-left: 15vw;
+    color: #ffc7da;
+    text-shadow: 0 0 10px #49ffa7, 0 0 20px #ff4986, 0 0 30px #ff4986;
+  }
+}
