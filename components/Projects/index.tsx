@@ -16,16 +16,31 @@ export default function Projects(): JSX.Element {
         <div className={styles.projectsGlowText}>
           <span>Projects</span>
         </div>
-        <div className={styles.projectContainer}>
-          {projectList?.map((project: ProjectList) => {
-            return (
-              <div className={styles.projectBox} key={project.id}>
-                <span>{project.title}</span>
-                <span>{project.descriptionEng}</span>
-                <span>{project.url}</span>
-              </div>
-            );
-          })}
+        <div className={styles.bodyContainer}>
+          <div className={styles.projectContainer}>
+            {projectList?.map((project: ProjectList) => {
+              return (
+                <div
+                  className={styles.projectBox}
+                  key={project.id}
+                  onClick={() => {
+                    window.open(project.url);
+                  }}
+                >
+                  <span className={styles.projectTitle}>{project.title}</span>
+                  <span className={styles.projectCat}>{project.category}</span>
+                  <span className={styles.projectDesc}>
+                    {project.descriptionEng}
+                  </span>
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    className={styles.projectUrl}
+                  ></a>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className={styles.container}></div>
