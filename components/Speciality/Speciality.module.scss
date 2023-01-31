@@ -6,9 +6,11 @@
 
   .specialityGlowText {
     padding-top: 20%;
+    font-family: var(--font-neon);
+    font-size: 1.5rem;
     margin-left: 15vw;
-    color: #a2d2ff;
-    text-shadow: 0 0 10px #5283ff, 0 0 20px #5283ff, 0 0 30px #5283ff;
+    color: #ccffe5;
+    text-shadow: 0 0 10px #2aff91, 0 0 20px #2aff91, 0 0 30px #2aff91;
   }
 
   .container {
