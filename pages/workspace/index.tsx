@@ -1,3 +1,6 @@
+import axios from "axios";
+import { useQuery } from "react-query";
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -10,7 +13,26 @@ import Intro from "@/components/Intro";
 import Speciality from "@/components/Speciality";
 import Projects from "@/components/Projects";
 
-function Main() {
+interface ProjectListData {
+  id: number;
+  category: string;
+  title: string;
+  descriptionEng: string;
+  descriptionKor: string;
+  url: string;
+}
+
+interface ProjectList {
+  projectList: ProjectListData[];
+}
+
+function Main({ projectList }: ProjectList) {
+  useQuery({
+    queryKey: ["projectList"],
+    queryFn: () => {
+      return projectList;
+    },
+  });
   // const testRef = useRef<HTMLElement>(null);
 
   // useEffect(() => {
@@ -39,3 +61,12 @@ function Main() {
 }
 
 export default Main;
+
+export async function getServerSideProps() {
+  const list = await axios.get("http://localhost:3000/api/projectlist");
+  return {
+    props: {
+      projectList: list?.data.resData,
+    },
+  };
+}

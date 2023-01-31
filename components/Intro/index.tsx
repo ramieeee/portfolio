@@ -35,21 +35,8 @@ export default function Intro({ data }: any): JSX.Element {
               Notion
             </a>
           </span>
-          <button onClick={() => console.log(data)}>test</button>
         </div>
       </div>
     </div>
   );
 }
-
-// export async function getServerSideProps() {
-
-//   console.log("here");
-//   console.log(list);
-
-//   return {
-//     props: {
-//       data: list,
-//     },
-//   };
-// }

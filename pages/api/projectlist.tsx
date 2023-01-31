@@ -15,7 +15,7 @@ interface Data {
 interface ResponseData {
   message: string;
   status: number;
-  data: Data[];
+  resData: Data[];
 }
 
 export default async function handler(
@@ -28,13 +28,8 @@ export default async function handler(
     return res.status(200).json({
       message: "Data fetching successful",
       status: 200,
-      data: projectList,
+      resData: projectList,
     });
-    // return res.status(200).json({
-    //   message: "Data fetching successful",
-    //   status: 200,
-    //   data: projectList,
-    // });
   }
 
   // res.status(200).json({ name: "John Doe" });
