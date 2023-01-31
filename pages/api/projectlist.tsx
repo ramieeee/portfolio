@@ -1,21 +1,12 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 import type { NextApiRequest, NextApiResponse } from "next";
-
-interface Data {
-  id: number;
-  category: string;
-  title: string;
-  descriptionEng: string;
-  descriptionKor: string;
-  url: string;
-}
+import ProjectList from "@/interface/ProjectList";
 
 interface ResponseData {
   message: string;
   status: number;
-  resData: Data[];
+  resData: ProjectList[];
 }
 
 export default async function handler(
@@ -31,6 +22,4 @@ export default async function handler(
       resData: projectList,
     });
   }
-
-  // res.status(200).json({ name: "John Doe" });
 }

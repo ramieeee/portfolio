@@ -8,13 +8,6 @@ export default function Landing() {
 
   const [homeClassName, setHomeClassName] = useState<string | null>("home");
 
-  useQuery({
-    queryKey: ["firstVisitCheck"],
-    queryFn: () => {
-      return "first";
-    },
-  });
-
   return (
     <>
       {/* <Link href="/workspace"> */}

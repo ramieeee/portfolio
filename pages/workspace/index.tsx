@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 
-import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -13,20 +12,14 @@ import Intro from "@/components/Intro";
 import Speciality from "@/components/Speciality";
 import Projects from "@/components/Projects";
 
+// interface
+import ProjectList from "@/interface/ProjectList";
+
 interface ProjectListData {
-  id: number;
-  category: string;
-  title: string;
-  descriptionEng: string;
-  descriptionKor: string;
-  url: string;
+  projectList: ProjectList[];
 }
 
-interface ProjectList {
-  projectList: ProjectListData[];
-}
-
-function Main({ projectList }: ProjectList) {
+function Main({ projectList }: ProjectListData) {
   useQuery({
     queryKey: ["projectList"],
     queryFn: () => {
