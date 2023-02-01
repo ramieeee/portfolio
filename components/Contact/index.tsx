@@ -19,9 +19,10 @@ export default function Contact(): JSX.Element {
   };
 
   const onBtnClick = () => {
-    console.log(name);
-    console.log(email);
-    console.log(body);
+    // setName("");
+    // setEmail("");
+    // setBody("");
+    console.log("sent!");
   };
 
   return (
@@ -30,23 +31,46 @@ export default function Contact(): JSX.Element {
       <div className={styles.container}>
         <div className={styles.textContainer}>
           <span>If you ever feel like reaching me, send me a message</span>
+          <div className={styles.line} />
+          <span className={styles.contactLink}>
+            Cehck out my{" "}
+            <a
+              href="https://github.com/ramieeee"
+              target="_blank"
+              className={styles.linkGlow}
+            >
+              Github
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://www.notion.so/ramieeee/Hey-26c0b8e94dce4543b0bb50abf571b0cf"
+              target="_blank"
+              className={styles.linkGlow}
+            >
+              Notion
+            </a>{" "}
+            as well
+          </span>
         </div>
         <div className={styles.formContainer}>
           <input
             className={styles.name}
             placeholder="name"
             onChange={onNameChange}
+            value={name}
           />
           <input
             className={styles.email}
             placeholder="email"
             onChange={onEmailChange}
+            value={email}
             type="email"
           />
           <textarea
             className={styles.emailBody}
             placeholder="message"
             onChange={onBodyChange}
+            value={body}
           />
           <button
             className={styles.submitBtn}

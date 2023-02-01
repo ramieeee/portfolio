@@ -32,13 +32,13 @@
         width: 250px;
         height: 280px;
         padding: 0 10px;
-        box-shadow: 0 0 10px #2e1a40;
+        // box-shadow: 0 0 10px #2e1a40;
         border-radius: 30px;
         cursor: pointer;
 
         &:hover {
           animation-name: projectBoxAni;
-          animation-duration: 0.5s;
+          animation-duration: 0.3s;
           animation-direction: alternate;
           animation-fill-mode: forwards;
         }
@@ -49,12 +49,20 @@
           animation-direction: alternate;
           animation-fill-mode: forwards;
         }
+        &:hover .projectCat {
+          animation-name: projectCatAni;
+          animation-duration: 0.3s;
+          animation-direction: alternate;
+          animation-fill-mode: forwards;
+        }
 
         .projectTitle {
+          color: var(--light-off-color);
           margin-bottom: 20px;
         }
 
         .projectCat {
+          color: var(--light-off-color);
           position: absolute;
           top: 0;
           right: 0;
@@ -71,8 +79,11 @@
 }
 
 @keyframes projectBoxAni {
-  100% {
+  50% {
     box-shadow: 0 0 10px #6922a7;
+  }
+  100% {
+    box-shadow: 0 0 3px 1px #6922a7;
   }
 }
 
@@ -94,6 +105,21 @@
     opacity: 1;
     color: #e6c9ff;
     text-shadow: 0 0 10px #b55fff, 0 0 20px #b55fff, 0 0 30px #b55fff;
+  }
+}
+
+@keyframes projectCatAni {
+  60% {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+  }
+  70% {
+    color: var(--light-off-color);
+    text-shadow: none;
+  }
+  100% {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
   }
 }
 
