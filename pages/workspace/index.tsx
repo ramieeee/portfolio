@@ -56,7 +56,7 @@ function Main({ projectList }: ProjectListData) {
       <Speciality />
       <Projects />
       <Contact />
-      <div className={styles.icons}>
+      <div className={styles.iconContainer}>
         <HomeIcon width="20px" height="20px" color="#ffffff" />
         <SkillsIcon width="20px" height="20px" color="#ffffff" />
         <ProjectsIcon width="20px" height="20px" color="#ffffff" />
