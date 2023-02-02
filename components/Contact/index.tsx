@@ -59,19 +59,25 @@ export default function Contact(): JSX.Element {
             onChange={onNameChange}
             value={name}
           />
+          <div className={styles.formBottomLine} />
+
           <input
             className={styles.email}
-            placeholder="email"
+            placeholder="your email"
             onChange={onEmailChange}
             value={email}
             type="email"
           />
+          <div className={styles.formBottomLine} />
+
           <textarea
             className={styles.emailBody}
             placeholder="message"
             onChange={onBodyChange}
             value={body}
           />
+          <div className={styles.formBottomLine} />
+
           <button
             className={styles.submitBtn}
             onClick={onBtnClick}
