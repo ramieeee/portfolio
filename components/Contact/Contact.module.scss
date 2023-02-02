@@ -78,12 +78,15 @@
       .submitBtn {
         font-family: var(--font-mono);
         font-size: 1.2rem;
-        width: 100px;
-        height: 50px;
+        margin-top: 10px;
+        width: 80px;
+        height: 40px;
         color: #7cf8ff;
+        cursor: pointer;
         background: none;
         border-style: none;
-        cursor: pointer;
+        border-radius: 4px;
+        box-shadow: 0 0 10px #2ef5ff, 0 0 5px #2ef5ff inset;
         text-shadow: 0 0 10px #2ef5ff, 0 0 20px #2ef5ff, 0 0 30px #2ef5ff;
         &:hover {
           color: #bff9ff;
@@ -97,6 +100,8 @@
 
       .submitBtn:disabled {
         cursor: auto;
+        box-shadow: none;
+        border: 1px solid var(--light-off-color);
         color: var(--light-off-color);
         text-shadow: none !important;
       }

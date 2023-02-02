@@ -93,10 +93,10 @@ export default function Contact(): JSX.Element {
 
           <textarea
             className={styles.emailBody}
-            placeholder="message (200 letters)"
+            placeholder="message"
             onChange={onBodyChange}
             value={body}
-            maxLength={10}
+            maxLength={2000}
           />
 
           <button
