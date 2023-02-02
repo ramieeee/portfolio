@@ -19,7 +19,7 @@ const Line = (): JSX.Element => {
 export default function Speciality(): JSX.Element {
   return (
     <>
-      <div className={styles.Speciality}>
+      <div className={styles.Speciality} id="Speciality">
         <div className={styles.specialityGlowText}>
           <span>My Speciality</span>
         </div>

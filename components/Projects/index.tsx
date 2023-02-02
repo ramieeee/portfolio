@@ -12,7 +12,7 @@ export default function Projects(): JSX.Element {
 
   return (
     <>
-      <div className={styles.Projects}>
+      <div className={styles.Projects} id="Projects">
         <div className={styles.projectsGlowText}>
           <span>Projects</span>
         </div>

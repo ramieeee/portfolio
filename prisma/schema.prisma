@@ -11,10 +11,18 @@ datasource db {
 }
 
 model projectList {
-  id              Int   @default(autoincrement()) @id 
+  id              Int      @default(autoincrement()) @id 
   category        String
   title           String
   descriptionEng  String
   descriptionKor  String
   url             String
+}
+
+model messageList {
+  id             Int       @default(autoincrement()) @id
+  name           String
+  email          String
+  message        String
+  date           DateTime  @default(now())
 }

@@ -2,7 +2,7 @@ import styles from "./Intro.module.scss";
 
 export default function Intro({ data }: any): JSX.Element {
   return (
-    <div className={styles.Intro}>
+    <div className={styles.Intro} id="Intro">
       <div className={styles.textContainer}>
         <div className={styles.introName}>
           <span>Ramhee Yeon</span>

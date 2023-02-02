@@ -57,10 +57,18 @@ function Main({ projectList }: ProjectListData) {
       <Projects />
       <Contact />
       <div className={styles.iconContainer}>
-        <HomeIcon width="20px" height="20px" color="#ffffff" />
-        <SkillsIcon width="20px" height="20px" color="#ffffff" />
-        <ProjectsIcon width="20px" height="20px" color="#ffffff" />
-        <ContactIcon width="20px" height="20px" color="#ffffff" />
+        <a href="#Intro">
+          <HomeIcon width="20px" height="20px" color="#ffffff" />
+        </a>
+        <a href="#Speciality">
+          <SkillsIcon width="20px" height="20px" color="#ffffff" />
+        </a>
+        <a href="#Projects">
+          <ProjectsIcon width="20px" height="20px" color="#ffffff" />
+        </a>
+        <a href="#Contact">
+          <ContactIcon width="20px" height="20px" color="#ffffff" />
+        </a>
       </div>
     </div>
   );

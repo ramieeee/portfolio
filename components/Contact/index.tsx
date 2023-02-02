@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styles from "./Contact.module.scss";
+import axios, { AxiosResponse } from "axios";
+import { useMutation } from "react-query";
 
 export default function Contact(): JSX.Element {
   const [name, setName] = useState<string>("");
@@ -18,15 +20,34 @@ export default function Contact(): JSX.Element {
     setBody(e.target.value);
   };
 
+  const queryMigMutation = useMutation({
+    mutationFn: () => {
+      const payload = {
+        name: name,
+        email: email,
+        body: body,
+      };
+
+      return axios.post("/api/message", payload);
+    },
+    onSuccess: (data: AxiosResponse) => {
+      console.log(data.status);
+    },
+  });
+
   const onBtnClick = () => {
-    // setName("");
-    // setEmail("");
-    // setBody("");
-    console.log("sent!");
+    var reg_email =
+      /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+    if (!reg_email.test(email)) {
+      alert("invalid email format");
+    } else {
+      alert("successfully sent");
+      queryMigMutation.mutate();
+    }
   };
 
   return (
-    <div className={styles.Contact}>
+    <div className={styles.Contact} id="Contact">
       <span className={styles.contactGlowText}>Contact</span>
       <div className={styles.container}>
         <div className={styles.textContainer}>
@@ -59,24 +80,24 @@ export default function Contact(): JSX.Element {
             onChange={onNameChange}
             value={name}
           />
-          <div className={styles.formBottomLine} />
 
-          <input
-            className={styles.email}
-            placeholder="your email"
-            onChange={onEmailChange}
-            value={email}
-            type="email"
-          />
-          <div className={styles.formBottomLine} />
+          <form>
+            <input
+              className={styles.email}
+              placeholder="your email"
+              onChange={onEmailChange}
+              value={email}
+              type="email"
+            />
+          </form>
 
           <textarea
             className={styles.emailBody}
-            placeholder="message"
+            placeholder="message (200 letters)"
             onChange={onBodyChange}
             value={body}
+            maxLength={10}
           />
-          <div className={styles.formBottomLine} />
 
           <button
             className={styles.submitBtn}
