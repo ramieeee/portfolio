@@ -1,10 +1,10 @@
-interface IProps {
-  width: string;
-  height: string;
-  color: string;
-}
+import SvgProps from "@/interface/SvgProps";
 
-export default function AiIcon({ width, height, color }: IProps): JSX.Element {
+export default function AiIcon({
+  width,
+  height,
+  color,
+}: SvgProps): JSX.Element {
   return (
     <svg
       width={width}

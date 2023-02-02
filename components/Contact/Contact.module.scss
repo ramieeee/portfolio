@@ -58,7 +58,6 @@
         width: 200px !important;
         padding: 4px;
         caret-color: #ffffff;
-        // margin-bottom: 20px;
         font-family: var(--font-mono);
         outline: none;
         resize: none;
@@ -67,11 +66,7 @@
         border-style: none;
         background: none;
         color: white;
-        // box-shadow: 0 0 10px 1px #ffffff, 0 0 10px #ffffff inset,
-        //   0 0 10px #16efff;
-        // &:hover .formBottomLine {
-        //   border-bottom: 1px solid;
-        // }
+
         &:focus {
           box-shadow: 0 0px 1px white inset, 0 0px 1px white;
         }

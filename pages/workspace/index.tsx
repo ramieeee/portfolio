@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -15,6 +14,12 @@ import Contact from "@/components/Contact";
 
 // interface
 import ProjectList from "@/interface/ProjectList";
+
+// icons
+import HomeIcon from "@/components/icons/HomeIcon";
+import SkillsIcon from "@/components/icons/SkillsIcon";
+import ProjectsIcon from "@/components/icons/ProjectsIcon";
+import ContactIcon from "@/components/icons/ContactIcon";
 
 interface ProjectListData {
   projectList: ProjectList[];
@@ -51,6 +56,12 @@ function Main({ projectList }: ProjectListData) {
       <Speciality />
       <Projects />
       <Contact />
+      <div className={styles.icons}>
+        <HomeIcon width="20px" height="20px" color="#ffffff" />
+        <SkillsIcon width="20px" height="20px" color="#ffffff" />
+        <ProjectsIcon width="20px" height="20px" color="#ffffff" />
+        <ContactIcon width="20px" height="20px" color="#ffffff" />
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import styles from "./Speciality.module.scss";
-import AiIcon from "@/components/AiIcon";
-import CodingIcon from "@/components/CodingIcon";
+import AiIcon from "@/components/icons/AiIcon";
+import CodingIcon from "@/components/icons/CodingIcon";
 
 const Line = (): JSX.Element => {
   return (

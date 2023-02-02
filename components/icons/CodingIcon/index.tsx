@@ -1,14 +1,10 @@
-interface IProps {
-  width: string;
-  height: string;
-  color: string;
-}
+import SvgProps from "@/interface/SvgProps";
 
 export default function CodingIcon({
   width,
   height,
   color,
-}: IProps): JSX.Element {
+}: SvgProps): JSX.Element {
   return (
     <svg
       width={width}
