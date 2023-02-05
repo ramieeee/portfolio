@@ -1,10 +1,10 @@
-.Speciality {
+.Specialty {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
 
-  .specialityGlowText {
+  .specialtyGlowText {
     padding-top: 8%;
     font-family: var(--font-neon);
     font-size: 1.5rem;
@@ -18,15 +18,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 90px;
 
-    .specialityBox {
+    .specialtyBox {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
-      .specialityTitle {
+      .specialtyTitle {
         font-size: 1.2rem;
         text-align: center;
         width: 260px;
@@ -36,5 +36,14 @@
         margin-bottom: 20px;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

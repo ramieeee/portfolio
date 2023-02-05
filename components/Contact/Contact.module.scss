@@ -108,3 +108,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .textContainer {
+    width: 100%;
+  }
+}

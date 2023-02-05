@@ -1,7 +1,6 @@
 import styles from "./Landing.module.scss";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { useQuery } from "react-query";
 
 export default function Landing() {
   const router = useRouter();

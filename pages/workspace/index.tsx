@@ -8,7 +8,7 @@ import styles from "./Workspace.module.scss";
 
 // components
 import Intro from "@/components/Intro";
-import Speciality from "@/components/Speciality";
+import Specialty from "@/components/Specialty";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 
@@ -53,14 +53,14 @@ function Main({ projectList }: ProjectListData) {
     <div className={styles.Main}>
       <span className={styles.logo}>SausageDog</span>
       <Intro />
-      <Speciality />
+      <Specialty />
       <Projects />
       <Contact />
       <div className={styles.iconContainer}>
         <a href="#Intro">
           <HomeIcon width="20px" height="20px" color="#ffffff" />
         </a>
-        <a href="#Speciality">
+        <a href="#Specialty">
           <SkillsIcon width="20px" height="20px" color="#ffffff" />
         </a>
         <a href="#Projects">

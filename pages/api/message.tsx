@@ -11,7 +11,6 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
-  console.log(req.body);
   if (req.method === "POST") {
     const sendPost = await prisma.messageList.create({
       data: {
