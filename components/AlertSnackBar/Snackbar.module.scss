@@ -1,0 +1,51 @@
+.Snackbar {
+  opacity: 0;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  font-family: var(--font-neon);
+}
+
+.snackbarBlink {
+  @extend .Snackbar;
+  animation-name: snackbarAni;
+  animation-duration: 3s;
+}
+
+@keyframes snackbarAni {
+  0% {
+    opacity: 1;
+  }
+  11% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 0.1;
+  }
+  16% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  76% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -3,10 +3,21 @@ import styles from "./Contact.module.scss";
 import axios, { AxiosResponse } from "axios";
 import { useMutation } from "react-query";
 
+import SnackbarObj from "@/interface/SnackbarObj";
+
+// component
+import AlertSnackBar from "@/components/AlertSnackBar";
+
 export default function Contact(): JSX.Element {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [body, setBody] = useState<string>("");
+  const [isSnackbarOn, setIsSnackbarOn] = useState<boolean>(false);
+  const [snackbarProps, setSnackbarProps] = useState<SnackbarObj>({
+    message: "",
+    color: "",
+    textShadow: "",
+  });
 
   const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -20,7 +31,7 @@ export default function Contact(): JSX.Element {
     setBody(e.target.value);
   };
 
-  const queryMigMutation = useMutation({
+  const sendMutation = useMutation({
     mutationFn: () => {
       const payload = {
         name: name,
@@ -31,30 +42,60 @@ export default function Contact(): JSX.Element {
       return axios.post("/api/message", payload);
     },
     onSuccess: (data: AxiosResponse) => {
-      console.log(data.status);
+      setSnackbarProps({
+        message: "successfully sent",
+        color: "#86ff9a",
+        textShadow: "0 0 10px #3cff5c, 0 0 20px #3cff5c, 0 0 30px #3cff5c",
+      });
+      setName("");
+      setEmail("");
+      setBody("");
+    },
+    onError: (e: AxiosResponse) => {
+      setSnackbarProps({
+        message: "Error. Try again",
+        color: "#f28888",
+        textShadow: "0 0 10px #f34848, 0 0 20px #f34848, 0 0 30px #f34848",
+      });
     },
   });
 
+  //message, color, boxshadow
   const onBtnClick = () => {
     var reg_email =
       /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
     if (!reg_email.test(email)) {
-      alert("invalid email format");
+      setSnackbarProps({
+        message: "invalid email format",
+        color: "#f28888",
+        textShadow: "0 0 10px #f34848, 0 0 20px #f34848, 0 0 30px #f34848",
+      });
+      handleSnackbar();
     } else {
-      alert("successfully sent");
-      queryMigMutation.mutate();
+      handleSnackbar();
+      sendMutation.mutate();
     }
+  };
+
+  const handleSnackbar = () => {
+    setIsSnackbarOn(true);
+    setTimeout(() => {
+      setIsSnackbarOn(false);
+    }, 3000);
   };
 
   return (
     <div className={styles.Contact} id="Contact">
       <span className={styles.contactGlowText}>Contact</span>
+
       <div className={styles.container}>
         <div className={styles.textContainer}>
-          <span>If you ever feel like reaching me, send me a message</span>
+          <span className={styles.test}>
+            If you ever feel like reaching me, send me a message
+          </span>
           <div className={styles.line} />
           <span className={styles.contactLink}>
-            Cehck out my{" "}
+            Check out my{" "}
             <a
               href="https://github.com/ramieeee"
               target="_blank"
@@ -102,10 +143,17 @@ export default function Contact(): JSX.Element {
           <button
             className={styles.submitBtn}
             onClick={onBtnClick}
-            disabled={name === "" || email === "" || body === ""}
+            disabled={
+              name === "" || email === "" || body === "" || isSnackbarOn
+            }
           >
             Send
           </button>
+
+          <AlertSnackBar
+            isSnackbarOn={isSnackbarOn}
+            snackbarProps={snackbarProps}
+          />
         </div>
       </div>
     </div>
