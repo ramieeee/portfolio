@@ -29,7 +29,7 @@ export default function Specialty(): JSX.Element {
             <AiIcon width={"50px"} height={"50px"} color={"#ffffff"} />
             <Line />
             <span className={styles.specialtyTitle}>
-              Artificial Inteligence
+              Artificial Intelligence
             </span>
             <span className={styles.specialtyText}>
               As a postgraduate student,

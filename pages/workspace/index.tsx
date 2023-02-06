@@ -1,8 +1,5 @@
 import axios from "axios";
 import { useQuery } from "react-query";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 import styles from "./Workspace.module.scss";
 
@@ -32,22 +29,6 @@ function Main({ projectList }: ProjectListData) {
       return projectList;
     },
   });
-  // const testRef = useRef<HTMLElement>(null);
-
-  // useEffect(() => {
-  //   const el = testRef.current;
-  //   gsap.fromTo(
-  //     el,
-  //     { opacity: 0 },
-  //     {
-  //       opacity: 1,
-  //       duration: 3,
-  //       scrollTrigger: {
-  //         trigger: el,
-  //       },
-  //     }
-  //   );
-  // }, []);
 
   return (
     <div className={styles.Main}>

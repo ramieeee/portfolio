@@ -9,7 +9,6 @@ export default function Landing() {
 
   return (
     <>
-      {/* <Link href="/workspace"> */}
       <div
         className={homeClassName === "home" ? styles.Home : styles.HomeSlideOut}
         onClick={() => {
@@ -29,7 +28,6 @@ export default function Landing() {
           <p className={styles.textBottom}>YEON</p>
         </div>
       </div>
-      {/* </Link> */}
     </>
   );
 }

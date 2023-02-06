@@ -19,6 +19,11 @@
       font-family: antic !important;
       color: #a2d2ff;
       text-shadow: 0 0 10px #5283ff, 0 0 20px #5283ff, 0 0 30px #5283ff;
+      .blink {
+        animation-name: blinkAni;
+        animation-iteration-count: infinite;
+        animation-duration: 4s;
+      }
     }
 
     .introTextContainer {
@@ -43,6 +48,33 @@
       border-bottom: #ffffff solid 1px;
       width: 40vw;
     }
+  }
+}
+
+@keyframes blinkAni {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  59% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  63% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  76% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
   }
 }
 
