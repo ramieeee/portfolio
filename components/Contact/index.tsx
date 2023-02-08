@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import styles from "./Contact.module.scss";
 import axios, { AxiosResponse } from "axios";
 import { useMutation } from "react-query";
@@ -8,7 +8,11 @@ import SnackbarObj from "@/interface/SnackbarObj";
 // component
 import AlertSnackBar from "@/components/AlertSnackBar";
 
-export default function Contact(): JSX.Element {
+interface Props {
+  props: null;
+}
+
+const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [body, setBody] = useState<string>("");
@@ -85,7 +89,7 @@ export default function Contact(): JSX.Element {
   };
 
   return (
-    <div className={styles.Contact} id="Contact">
+    <div className={styles.Contact} id="Contact" ref={ref}>
       <span className={styles.contactGlowText}>Contact</span>
 
       <div className={styles.container}>
@@ -158,4 +162,6 @@ export default function Contact(): JSX.Element {
       </div>
     </div>
   );
-}
+});
+
+export default Contact;

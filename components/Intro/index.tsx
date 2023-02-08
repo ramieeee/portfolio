@@ -1,10 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, forwardRef } from "react";
 import styles from "./Intro.module.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Intro({ data }: any): JSX.Element {
+interface Props {
+  props: null;
+}
+
+const Intro = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const nameRef = useRef<HTMLDivElement>(null);
   const textLeftRef = useRef<HTMLElement>(null);
   const textRightRef = useRef<HTMLElement>(null);
@@ -78,4 +82,6 @@ export default function Intro({ data }: any): JSX.Element {
       </div>
     </div>
   );
-}
+});
+
+export default Intro;

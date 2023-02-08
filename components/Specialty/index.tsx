@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, forwardRef } from "react";
 import styles from "./Specialty.module.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -9,7 +9,11 @@ import AiIcon from "@/components/icons/AiIcon";
 import CodingIcon from "@/components/icons/CodingIcon";
 import Line from "@/components/Line";
 
-export default function Specialty(): JSX.Element {
+interface Props {
+  props: null;
+}
+
+const Specialty = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const textLeftRef = useRef<HTMLElement>(null);
   const textRightRef = useRef<HTMLElement>(null);
   const underlineLeftRef = useRef<HTMLDivElement>(null);
@@ -25,6 +29,7 @@ export default function Specialty(): JSX.Element {
         delay: 0.5,
         scrollTrigger: {
           trigger: textLeftRef.current,
+          start: 500,
         },
         keyframes: {},
       }
@@ -69,7 +74,7 @@ export default function Specialty(): JSX.Element {
 
   return (
     <>
-      <div className={styles.Specialty} id="Specialty">
+      <div className={styles.Specialty} id="Specialty" ref={ref}>
         <div className={styles.specialtyGlowText}>
           <span>My Specialty</span>
         </div>
@@ -106,4 +111,6 @@ export default function Specialty(): JSX.Element {
       </div>
     </>
   );
-}
+});
+
+export default Specialty;

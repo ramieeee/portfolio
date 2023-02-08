@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 
@@ -30,24 +31,45 @@ function Main({ projectList }: ProjectListData) {
     },
   });
 
+  const introRef = useRef<HTMLDivElement>(null);
+  const specialtyRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className={styles.Main}>
       <span className={styles.logo}>SausageDog</span>
-      <Intro />
-      <Specialty />
-      <Projects />
-      <Contact />
+      <Intro ref={introRef} props={null} />
+      <Specialty ref={specialtyRef} props={null} />
+      <Projects ref={projectsRef} props={null} />
+      <Contact ref={contactRef} props={null} />
       <div className={styles.iconContainer}>
-        <a href="#Intro">
+        <a
+          onClick={() => {
+            introRef.current?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           <HomeIcon width="20px" height="20px" color="#ffffff" />
         </a>
-        <a href="#Specialty">
+        <a
+          onClick={() => {
+            specialtyRef.current?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           <SkillsIcon width="20px" height="20px" color="#ffffff" />
         </a>
-        <a href="#Projects">
+        <a
+          onClick={() => {
+            projectsRef.current?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           <ProjectsIcon width="20px" height="20px" color="#ffffff" />
         </a>
-        <a href="#Contact">
+        <a
+          onClick={() => {
+            contactRef.current?.scrollIntoView({ behavior: "smooth" });
+          }}
+        >
           <ContactIcon width="20px" height="20px" color="#ffffff" />
         </a>
       </div>
