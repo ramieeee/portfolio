@@ -1,12 +1,17 @@
-import { useState, forwardRef } from "react";
+import { useEffect, useState, forwardRef, useRef } from "react";
 import styles from "./Contact.module.scss";
 import axios, { AxiosResponse } from "axios";
 import { useMutation } from "react-query";
 
-import SnackbarObj from "@/interface/SnackbarObj";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 // component
 import AlertSnackBar from "@/components/AlertSnackBar";
+
+// interface
+import SnackbarObj from "@/interface/SnackbarObj";
 
 interface Props {
   props: null;
@@ -22,6 +27,64 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
     color: "",
     textShadow: "",
   });
+
+  const textTopRef = useRef<HTMLSpanElement>(null);
+  const textBottomRef = useRef<HTMLSpanElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      textTopRef.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        delay: 0.3,
+        duration: 1,
+        scrollTrigger: {
+          trigger: textTopRef.current,
+        },
+      }
+    );
+    gsap.fromTo(
+      textBottomRef.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        delay: 0.5,
+        duration: 1,
+        scrollTrigger: {
+          trigger: textBottomRef.current,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      lineRef.current,
+      { width: "0px", transform: "translate(8vw)" },
+      {
+        width: "100%",
+        transform: "translate(0px)",
+        delay: 0.8,
+        duration: 0.4,
+        scrollTrigger: {
+          trigger: lineRef.current,
+        },
+      }
+    );
+    gsap.fromTo(
+      formRef.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        delay: 1,
+        duration: 2,
+        scrollTrigger: {
+          trigger: formRef.current,
+        },
+      }
+    );
+  }, []);
 
   const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -94,11 +157,11 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
 
       <div className={styles.container}>
         <div className={styles.textContainer}>
-          <span className={styles.test}>
+          <span className={styles.test} ref={textTopRef}>
             If you ever feel like reaching me, send me a message
           </span>
-          <div className={styles.line} />
-          <span className={styles.contactLink}>
+          <div className={styles.line} ref={lineRef} />
+          <span className={styles.contactLink} ref={textBottomRef}>
             Check out my{" "}
             <a
               href="https://github.com/ramieeee"
@@ -118,7 +181,7 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
             as well
           </span>
         </div>
-        <div className={styles.formContainer}>
+        <div className={styles.formContainer} ref={formRef}>
           <input
             className={styles.name}
             placeholder="name"

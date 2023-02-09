@@ -2,6 +2,10 @@ import { useRef } from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+
 import styles from "./Workspace.module.scss";
 
 // components
@@ -36,6 +40,10 @@ function Main({ projectList }: ProjectListData) {
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
+  const onspecialIconClick = () => {
+    gsap.to(window, { duration: 2, scrollTo: "#Specialty" });
+  };
+
   return (
     <div className={styles.Main}>
       <span className={styles.logo}>SausageDog</span>
@@ -43,35 +51,36 @@ function Main({ projectList }: ProjectListData) {
       <Specialty ref={specialtyRef} props={null} />
       <Projects ref={projectsRef} props={null} />
       <Contact ref={contactRef} props={null} />
+
       <div className={styles.iconContainer}>
-        <a
+        <div
           onClick={() => {
             introRef.current?.scrollIntoView({ behavior: "smooth" });
           }}
         >
           <HomeIcon width="20px" height="20px" color="#ffffff" />
-        </a>
-        <a
+        </div>
+        <div
           onClick={() => {
             specialtyRef.current?.scrollIntoView({ behavior: "smooth" });
           }}
         >
           <SkillsIcon width="20px" height="20px" color="#ffffff" />
-        </a>
-        <a
+        </div>
+        <div
           onClick={() => {
             projectsRef.current?.scrollIntoView({ behavior: "smooth" });
           }}
         >
           <ProjectsIcon width="20px" height="20px" color="#ffffff" />
-        </a>
-        <a
+        </div>
+        <div
           onClick={() => {
             contactRef.current?.scrollIntoView({ behavior: "smooth" });
           }}
         >
           <ContactIcon width="20px" height="20px" color="#ffffff" />
-        </a>
+        </div>
       </div>
     </div>
   );

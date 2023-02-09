@@ -29,9 +29,7 @@ const Specialty = forwardRef<HTMLDivElement, Props>((props, ref) => {
         delay: 0.5,
         scrollTrigger: {
           trigger: textLeftRef.current,
-          start: 500,
         },
-        keyframes: {},
       }
     );
     gsap.fromTo(
