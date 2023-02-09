@@ -13,6 +13,7 @@ import Intro from "@/components/Intro";
 import Specialty from "@/components/Specialty";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 // interface
 import ProjectList from "@/interface/ProjectList";
@@ -51,7 +52,9 @@ function Main({ projectList }: ProjectListData) {
       <Specialty ref={specialtyRef} props={null} />
       <Projects ref={projectsRef} props={null} />
       <Contact ref={contactRef} props={null} />
+      <Footer />
 
+      {/* icon navigation */}
       <div className={styles.iconContainer}>
         <div
           onClick={() => {
@@ -88,6 +91,7 @@ function Main({ projectList }: ProjectListData) {
 
 export default Main;
 
+// SSR
 export async function getServerSideProps() {
   const list = await axios.get("http://localhost:3000/api/projectlist");
   return {

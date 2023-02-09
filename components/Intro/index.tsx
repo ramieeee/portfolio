@@ -62,7 +62,7 @@ const Intro = forwardRef<HTMLDivElement, Props>((props, ref) => {
   }, []);
 
   return (
-    <div className={styles.Intro} id="Intro">
+    <div className={styles.Intro} id="Intro" ref={ref}>
       <div className={styles.textContainer}>
         <div className={styles.introName} ref={nameRef}>
           <span>

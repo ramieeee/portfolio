@@ -1,0 +1,43 @@
+.lineContainer {
+  width: 100vw;
+  text-align: center;
+
+  .line {
+    width: 30%;
+    display: inline-block;
+    // border-bottom: 1px solid white;
+  }
+}
+
+.Footer {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .textTop {
+    color: #9ec8f3;
+    font-size: 0.8rem;
+    filter: drop-shadow(0 0 10px #827cfb);
+  }
+
+  .iconContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50vw;
+    margin: 20px 0 50px 0;
+
+    svg {
+      filter: drop-shadow(0 0 10px #827cfb);
+    }
+  }
+
+  .textBottom {
+    color: #9ec8f3;
+    font-size: 0.8rem;
+    filter: drop-shadow(0 0 10px #9ec8f3);
+  }
+}
