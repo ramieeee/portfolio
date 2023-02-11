@@ -30,8 +30,17 @@
     width: 50vw;
     margin: 20px 0 50px 0;
 
-    svg {
-      filter: drop-shadow(0 0 10px #827cfb);
+    .icon {
+      cursor: pointer;
+      svg {
+        filter: drop-shadow(0 0 10px #827cfb);
+        &:hover {
+          filter: drop-shadow(0 0 10px #d4d2ff);
+        }
+        &:active {
+          filter: drop-shadow(0 0 10px #827cfb);
+        }
+      }
     }
   }
 

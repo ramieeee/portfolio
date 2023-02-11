@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 
@@ -29,17 +29,17 @@ interface ProjectListData {
 }
 
 function Main({ projectList }: ProjectListData) {
+  const introRef = useRef<HTMLDivElement>(null);
+  const specialtyRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
   useQuery({
     queryKey: ["projectList"],
     queryFn: () => {
       return projectList;
     },
   });
-
-  const introRef = useRef<HTMLDivElement>(null);
-  const specialtyRef = useRef<HTMLDivElement>(null);
-  const projectsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
 
   const onspecialIconClick = () => {
     gsap.to(window, { duration: 2, scrollTo: "#Specialty" });
