@@ -41,10 +41,6 @@ function Main({ projectList }: ProjectListData) {
     },
   });
 
-  const onspecialIconClick = () => {
-    gsap.to(window, { duration: 2, scrollTo: "#Specialty" });
-  };
-
   return (
     <div className={styles.Main}>
       <span className={styles.logo}>SausageDog</span>
