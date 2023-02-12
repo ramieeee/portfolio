@@ -1,0 +1,46 @@
+.Project {
+  width: 100vw;
+  height: 100vh;
+  margin-left: 10vw;
+
+  .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  img {
+    width: 30vw;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #bafaff;
+  }
+
+  .titleContainer {
+    margin: 10vw 0 20px 0;
+    .title {
+      font-family: var(--font-neon);
+      font-size: 1.5rem;
+      color: #a6ccfa;
+      text-shadow: 0 0 10px #52e1fa, 0 0 20px #529dfa;
+    }
+  }
+
+  .descContainer {
+    margin: 5vw 0 0 10px;
+    width: 80vw;
+  }
+
+  .skillsTextContainer {
+    margin: 10vw 0 20px 0;
+    .skillsText {
+      font-family: var(--font-neon);
+      font-size: 1.3rem;
+      color: #caa6fa;
+      text-shadow: 0 0 10px #90e7fb, 0 0 20px #9b4eff;
+    }
+  }
+
+  .skillsContainer {
+    margin: 0 0 10px 10px;
+  }
+}

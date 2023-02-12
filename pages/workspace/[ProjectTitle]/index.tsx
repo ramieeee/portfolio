@@ -1,13 +1,37 @@
 import axios, { AxiosResponse } from "axios";
-import { useRouter } from "next/router";
+import { GetStaticProps } from "next";
 import ProjectList from "@/interface/ProjectList";
+import ConfidentialProjList from "@/interface/ConfidentialProjList";
 
-export default function Project() {
-  const router = useRouter();
+import styles from "./Project.module.scss";
 
+interface Props {
+  data: ConfidentialProjList;
+}
+
+export default function Project({ data }: Props) {
   return (
-    <div>
-      <span>hello</span>
+    <div className={styles.Project}>
+      <span className={styles.logo}>SausageDog</span>
+      <div className={styles.titleContainer}>
+        <span className={styles.title}>{data.title}</span>
+      </div>
+      <img src={data.imageUrl} alt={`Image of ${data.title}`} />
+      <div className={styles.descContainer}>
+        <span className={styles.desc}>{data.descriptionEng}</span>
+      </div>
+
+      <div className={styles.skillsTextContainer}>
+        <span className={styles.skillsText}>Skills used</span>
+      </div>
+
+      {data.skills.map((data) => {
+        return (
+          <div className={styles.skillsContainer} key={data}>
+            <span className={styles.skills}>{data}</span>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -33,20 +57,19 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context: any) {
-  // const id = context.id;
+export const getStaticProps: GetStaticProps = async (context) => {
+  const title = context.params?.ProjectTitle;
+  console.log(title);
 
-  // const list = await axios
-  //   .get("http://localhost:3000/api/projectlist")
-  //   .then((res: AxiosResponse) => {
-  //     return res.data.resData;
-  //   });
-
-  // const data = allEvents.filter((ev) => {
-  //   return ev.city === id;
-  // });
+  const list = await axios
+    .get(`http://localhost:3000/api/confidentialProjects?title=${title}`)
+    .then((res: AxiosResponse) => {
+      return res.data.resData;
+    });
 
   return {
-    props: {},
+    props: {
+      data: list,
+    },
   };
-}
+};
