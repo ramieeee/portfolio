@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 import type { NextApiRequest, NextApiResponse } from "next";
+import ErrRes from "@/interface/ErrRes";
 
 interface ResponseData {
   message: string;
@@ -9,7 +10,7 @@ interface ResponseData {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
+  res: NextApiResponse<ResponseData | ErrRes>
 ) {
   if (req.method === "POST") {
     const sendPost = await prisma.messageList.create({
@@ -23,6 +24,11 @@ export default async function handler(
     return res.status(200).json({
       message: "Data successfully inserted",
       status: 200,
+    });
+  } else {
+    return res.status(400).json({
+      status: 400,
+      message: "Invalid request",
     });
   }
 }

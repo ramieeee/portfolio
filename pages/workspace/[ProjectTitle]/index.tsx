@@ -22,7 +22,7 @@ export async function getStaticPaths() {
   const allPaths = titles?.map((project: ProjectList) => {
     return {
       params: {
-        ProjectTitle: project.title.toString(),
+        ProjectTitle: project.title,
       },
     };
   });
