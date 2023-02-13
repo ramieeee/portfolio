@@ -21,10 +21,10 @@ export default function NextjsIcon({
       />
       <path
         className={className}
-        clip-rule="evenodd"
+        clipRule="evenodd"
         d="M80.907 79.339L17.015 0H0v79.306h13.612V16.952l50.195 62.387h17.1z"
         fill={color}
-        fill-rule="evenodd"
+        fillRule="evenodd"
       />
       <path
         className={className}

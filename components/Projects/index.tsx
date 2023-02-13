@@ -36,6 +36,14 @@ const Projects = forwardRef<HTMLDivElement, Props>((props, ref) => {
     );
   });
 
+  const onProjectClick = (url: string, title: string) => {
+    if (url !== "Confidential") {
+      window.open(url);
+    } else {
+      window.open(`/workspace/${title}`);
+    }
+  };
+
   return (
     <div className={styles.Projects} id="Projects" ref={ref}>
       <div className={styles.projectsGlowText}>
@@ -49,7 +57,7 @@ const Projects = forwardRef<HTMLDivElement, Props>((props, ref) => {
                 className={styles.projectBox}
                 key={project.id}
                 onClick={() => {
-                  window.open(project.url);
+                  onProjectClick(project.url, project.title);
                 }}
               >
                 <span className={styles.projectTitle}>{project.title}</span>

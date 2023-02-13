@@ -59,7 +59,6 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const title = context.params?.ProjectTitle;
-  console.log(title);
 
   const list = await axios
     .get(`http://localhost:3000/api/confidentialProjects?title=${title}`)
