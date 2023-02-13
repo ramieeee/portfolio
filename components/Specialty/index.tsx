@@ -1,4 +1,4 @@
-import { useEffect, useRef, forwardRef } from "react";
+import { useState, useEffect, useRef, forwardRef } from "react";
 import styles from "./Specialty.module.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -15,6 +15,7 @@ interface Props {
 }
 
 const Specialty = forwardRef<HTMLDivElement, Props>((props, ref) => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const textLeftRef = useRef<HTMLElement>(null);
   const textRightRef = useRef<HTMLElement>(null);
   const underlineLeftRef = useRef<HTMLDivElement>(null);
@@ -71,13 +72,21 @@ const Specialty = forwardRef<HTMLDivElement, Props>((props, ref) => {
     );
   }, []);
 
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className={styles.Specialty} id="Specialty" ref={ref}>
       <div className={styles.specialtyGlowText}>
         <span>My Specialty</span>
       </div>
       <div className={styles.container}>
-        <div className={styles.specialtyBox}>
+        <div className={styles.specialtyBox} onClick={handleModalOpen}>
           <AiIcon width={"50px"} height={"50px"} color={"#ffffff"} />
           <Line
             width="40px"
@@ -90,7 +99,8 @@ const Specialty = forwardRef<HTMLDivElement, Props>((props, ref) => {
             As a postgraduate student,
           </span>
         </div>
-        <div className={styles.specialtyBox}>
+
+        <div className={styles.specialtyBox} onClick={handleModalOpen}>
           <CodingIcon width={"50px"} height={"50px"} color={"#ffffff"} />
           <Line
             width="40px"
@@ -104,7 +114,7 @@ const Specialty = forwardRef<HTMLDivElement, Props>((props, ref) => {
           </span>
         </div>
       </div>
-      <Modal />
+      <Modal isModalOpen={isModalOpen} handleModalClose={handleModalClose} />
     </div>
   );
 });
