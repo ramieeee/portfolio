@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 import AiIcon from "@/components/icons/AiIcon";
 import CodingIcon from "@/components/icons/CodingIcon";
 import Line from "@/components/Line";
+import Modal from "@/components/Modal";
 
 interface Props {
   props: null;
@@ -71,43 +72,40 @@ const Specialty = forwardRef<HTMLDivElement, Props>((props, ref) => {
   }, []);
 
   return (
-    <>
-      <div className={styles.Specialty} id="Specialty" ref={ref}>
-        <div className={styles.specialtyGlowText}>
-          <span>My Specialty</span>
+    <div className={styles.Specialty} id="Specialty" ref={ref}>
+      <div className={styles.specialtyGlowText}>
+        <span>My Specialty</span>
+      </div>
+      <div className={styles.container}>
+        <div className={styles.specialtyBox}>
+          <AiIcon width={"50px"} height={"50px"} color={"#ffffff"} />
+          <Line
+            width="40px"
+            margin="20px 0"
+            borderBottom="1px white solid"
+            ref={underlineLeftRef}
+          />
+          <span className={styles.specialtyTitle}>Artificial Intelligence</span>
+          <span className={styles.specialtyText} ref={textLeftRef}>
+            As a postgraduate student,
+          </span>
         </div>
-        <div className={styles.container}>
-          <div className={styles.specialtyBox}>
-            <AiIcon width={"50px"} height={"50px"} color={"#ffffff"} />
-            <Line
-              width="40px"
-              margin="20px 0"
-              borderBottom="1px white solid"
-              ref={underlineLeftRef}
-            />
-            <span className={styles.specialtyTitle}>
-              Artificial Intelligence
-            </span>
-            <span className={styles.specialtyText} ref={textLeftRef}>
-              As a postgraduate student,
-            </span>
-          </div>
-          <div className={styles.specialtyBox}>
-            <CodingIcon width={"50px"} height={"50px"} color={"#ffffff"} />
-            <Line
-              width="40px"
-              margin="20px 0"
-              borderBottom="1px white solid"
-              ref={underlineRightRef}
-            />
-            <span className={styles.specialtyTitle}>Web Development</span>
-            <span className={styles.specialtyText} ref={textRightRef}>
-              As a front-end developer,
-            </span>
-          </div>
+        <div className={styles.specialtyBox}>
+          <CodingIcon width={"50px"} height={"50px"} color={"#ffffff"} />
+          <Line
+            width="40px"
+            margin="20px 0"
+            borderBottom="1px white solid"
+            ref={underlineRightRef}
+          />
+          <span className={styles.specialtyTitle}>Web Development</span>
+          <span className={styles.specialtyText} ref={textRightRef}>
+            As a front-end developer,
+          </span>
         </div>
       </div>
-    </>
+      <Modal />
+    </div>
   );
 });
 
