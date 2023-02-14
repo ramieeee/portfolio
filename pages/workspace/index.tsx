@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 
@@ -45,6 +45,15 @@ function Main({ projectList }: ProjectListData) {
       return projectList;
     },
   });
+
+  useEffect(() => {
+    console.log(localStorage.getItem("currentLang"));
+    if (!localStorage.getItem("currentLang")) {
+      localStorage.setItem("currentLang", "en");
+    } else if (localStorage.getItem("currentLang")) {
+      router.locale = localStorage?.getItem("currentLang") as string;
+    }
+  }, []);
 
   return (
     <div className={styles.Main}>
