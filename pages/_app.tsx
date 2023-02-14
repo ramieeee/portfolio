@@ -1,6 +1,8 @@
 import { ReactQueryDevtools } from "react-query/devtools";
 import { QueryClient, QueryClientProvider } from "react-query";
 
+import { appWithTranslation } from "next-i18next";
+
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -13,7 +15,7 @@ const client = new QueryClient({
   },
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={client}>
       {process.env.NODE_ENV !== "production" ? (
@@ -29,3 +31,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </QueryClientProvider>
   );
 }
+
+export default appWithTranslation(App);

@@ -1,12 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import axios from "axios";
 import { useQuery } from "react-query";
 
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
-gsap.registerPlugin(ScrollToPlugin);
-
-import styles from "./Workspace.module.scss";
+// i18next
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 // components
 import Intro from "@/components/Intro";
@@ -14,6 +13,9 @@ import Specialty from "@/components/Specialty";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+
+// styles
+import styles from "./Workspace.module.scss";
 
 // interface
 import ProjectList from "@/interface/ProjectList";
@@ -29,6 +31,9 @@ interface ProjectListData {
 }
 
 function Main({ projectList }: ProjectListData) {
+  const router = useRouter();
+  const changeTo = router.locale === "en" ? "kr" : "en";
+
   const introRef = useRef<HTMLDivElement>(null);
   const specialtyRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -52,6 +57,9 @@ function Main({ projectList }: ProjectListData) {
 
       {/* icon navigation */}
       <div className={styles.iconContainer}>
+        <Link href="" locale={changeTo}>
+          <button>change</button>
+        </Link>
         <div
           onClick={() => {
             introRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -87,12 +95,14 @@ function Main({ projectList }: ProjectListData) {
 
 export default Main;
 
-// SSR
-export async function getServerSideProps() {
+// SSR & translation
+export async function getServerSideProps({ locale }: { locale: string }) {
   const list = await axios.get("http://localhost:3000/api/projectlist");
   return {
     props: {
       projectList: list?.data.resData,
+
+      ...(await serverSideTranslations(locale ?? "en", ["common"])),
     },
   };
 }
