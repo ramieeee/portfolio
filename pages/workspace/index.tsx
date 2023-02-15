@@ -12,6 +12,7 @@ import Intro from "@/components/Intro";
 import Specialty from "@/components/Specialty";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import LangToggle from "@/components/LangToggle";
 import Footer from "@/components/Footer";
 
 // styles
@@ -66,8 +67,8 @@ function Main({ projectList }: ProjectListData) {
 
       {/* icon navigation */}
       <div className={styles.iconContainer}>
-        <Link href="" locale={changeTo}>
-          <button>change</button>
+        <Link href="" locale={changeTo} style={{ textDecoration: "none" }}>
+          <LangToggle />
         </Link>
         <div
           onClick={() => {
