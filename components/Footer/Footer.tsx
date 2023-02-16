@@ -1,12 +1,12 @@
 import styles from "./Footer.module.scss";
 
 // components
-import ReactIcon from "@/components/icons/ReactIcon";
-import TypescriptIcon from "@/components/icons/TypescriptIcon";
-import NextjsIcon from "@/components/icons/NextjsIcon";
-import PostgresqlIcon from "@/components/icons/PostgresqlIcon";
-import PrismaIcon from "@/components/icons/PrismaIcon";
-import ReactQueryIcon from "@/components/icons/ReactQueryIcon";
+import ReactIcon from "@/components/icons/ReactIcon/ReactIcon";
+import TypescriptIcon from "@/components/icons/TypescriptIcon/TypescriptIcon";
+import NextjsIcon from "@/components/icons/NextjsIcon/NextjsIcon";
+import PostgresqlIcon from "@/components/icons/PostgresqlIcon/PostgresqlIcon";
+import PrismaIcon from "@/components/icons/PrismaIcon/PrismaIcon";
+import ReactQueryIcon from "@/components/icons/ReactQueryIcon/ReactQueryIcon";
 
 export default function Footer(): JSX.Element {
   const iconColor: string = "#9ec8f3";

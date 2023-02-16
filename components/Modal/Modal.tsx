@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import CloseBtnIcon from "@/components/icons/CloseBtnIcon";
+import CloseBtnIcon from "@/components/icons/CloseBtnIcon/CloseBtnIcon";
 import styles from "./Modal.module.scss";
 
 interface ModalToggle {

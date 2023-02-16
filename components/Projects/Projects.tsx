@@ -1,5 +1,4 @@
 import { useEffect, useRef, forwardRef } from "react";
-import { useQueryClient } from "react-query";
 import styles from "./Projects.module.scss";
 import ProjectList from "@/interface/ProjectList";
 
@@ -8,17 +7,10 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
-  props: null;
+  projectList: ProjectList[];
 }
 
-type ProjectObject = ProjectList[];
-
 const Projects = forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const queryClient = useQueryClient();
-  const projectList: ProjectObject | undefined = queryClient.getQueryData([
-    "projectList",
-  ]);
-
   const listRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     gsap.fromTo(
@@ -51,7 +43,7 @@ const Projects = forwardRef<HTMLDivElement, Props>((props, ref) => {
       </div>
       <div className={styles.bodyContainer}>
         <div className={styles.projectContainer} ref={listRef}>
-          {projectList?.map((project: ProjectList) => {
+          {props.projectList.map((project: ProjectList) => {
             return (
               <div
                 className={styles.projectBox}

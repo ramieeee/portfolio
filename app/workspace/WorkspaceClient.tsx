@@ -1,19 +1,18 @@
+"use client";
 import { useRef, useEffect } from "react";
-import axios from "axios";
-import { useQuery } from "react-query";
 
 // i18next
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 // components
-import Intro from "@/components/Intro";
-import Specialty from "@/components/Specialty";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import LangToggle from "@/components/LangToggle";
-import Footer from "@/components/Footer";
+import Intro from "@/components/Intro/Intro";
+import Specialty from "@/components/Specialty/Specialty";
+import Projects from "@/components/Projects/Projects";
+import Contact from "@/components/Contact/Contact";
+import LangToggle from "@/components/LangToggle/LangToggle";
+import Footer from "@/components/Footer/Footer";
 
 // styles
 import styles from "./Workspace.module.scss";
@@ -22,16 +21,16 @@ import styles from "./Workspace.module.scss";
 import ProjectList from "@/interface/ProjectList";
 
 // icons
-import HomeIcon from "@/components/icons/HomeIcon";
-import SkillsIcon from "@/components/icons/SkillsIcon";
-import ProjectsIcon from "@/components/icons/ProjectsIcon";
-import ContactIcon from "@/components/icons/ContactIcon";
+import HomeIcon from "@/components/icons/HomeIcon/HomeIcon";
+import SkillsIcon from "@/components/icons/SkillsIcon/SkillsIcon";
+import ProjectsIcon from "@/components/icons/ProjectsIcon/ProjectsIcon";
+import ContactIcon from "@/components/icons/ContactIcon/ContactIcon";
 
 interface ProjectListData {
   projectList: ProjectList[];
 }
 
-function Main({ projectList }: ProjectListData) {
+export default function WorkspaceClient({ projectList }: ProjectListData) {
   const router = useRouter();
   const changeTo = router.locale === "en" ? "kr" : "en";
 
@@ -39,13 +38,6 @@ function Main({ projectList }: ProjectListData) {
   const specialtyRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
-
-  useQuery({
-    queryKey: ["projectList"],
-    queryFn: () => {
-      return projectList;
-    },
-  });
 
   useEffect(() => {
     console.log(localStorage.getItem("currentLang"));
@@ -58,10 +50,9 @@ function Main({ projectList }: ProjectListData) {
 
   return (
     <div className={styles.Main}>
-      <span className={styles.logo}>SausageDog</span>
       <Intro ref={introRef} props={null} />
       <Specialty ref={specialtyRef} props={null} />
-      <Projects ref={projectsRef} props={null} />
+      <Projects ref={projectsRef} projectList={projectList} />
       <Contact ref={contactRef} props={null} />
       <Footer />
 
@@ -101,18 +92,4 @@ function Main({ projectList }: ProjectListData) {
       </div>
     </div>
   );
-}
-
-export default Main;
-
-// SSR & translation
-export async function getServerSideProps({ locale }: { locale: string }) {
-  const list = await axios.get("http://localhost:3000/api/projectlist");
-  return {
-    props: {
-      projectList: list?.data.resData,
-
-      ...(await serverSideTranslations(locale ?? "en", ["common"])),
-    },
-  };
 }

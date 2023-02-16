@@ -5,10 +5,10 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // components
-import AiIcon from "@/components/icons/AiIcon";
-import CodingIcon from "@/components/icons/CodingIcon";
-import Line from "@/components/Line";
-import Modal from "@/components/Modal";
+import AiIcon from "@/components/icons/AiIcon/AiIcon";
+import CodingIcon from "@/components/icons/CodingIcon/CodingIcon";
+import Line from "@/components/Line/Line";
+import Modal from "@/components/Modal/Modal";
 
 interface Props {
   props: null;
