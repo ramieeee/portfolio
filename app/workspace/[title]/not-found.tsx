@@ -1,8 +1,11 @@
 "use client";
+import styles from "./Project.module.scss";
+
 export default function NotFoundError() {
   return (
-    <div>
-      <span>404 not found</span>
+    <div className={styles.NotFoundError}>
+      <span>404 Error</span>
+      <span>Page not found</span>
     </div>
   );
 }

@@ -23,8 +23,8 @@
     right: 0;
     margin: auto;
     border-radius: 20px;
-    border: 1px #281d24 solid;
-    box-shadow: rgba(0, 0, 0, 0.7) 0 0 0 100vw, 0 0 50px #9f668b;
+    border: 1px #202020 solid;
+    box-shadow: rgba(0, 0, 0, 0.7) 0 0 0 100vw;
     z-index: 1000;
     padding: 30px;
     background: #141414;
@@ -61,6 +61,9 @@
     opacity: 1;
     width: 50%;
     height: 50%;
+  }
+  30% {
+    color: transparent;
   }
   50% {
     opacity: 0;

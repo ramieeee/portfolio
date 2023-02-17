@@ -10,7 +10,7 @@ interface Props {
 export default function ProjectClient({ data }: Props) {
   return (
     <div className={styles.Project}>
-      {/* <div className={styles.titleContainer}>
+      <div className={styles.titleContainer}>
         <span className={styles.title}>{data.title}</span>
       </div>
       <img src={data.imageUrl} alt={`Image of ${data.title}`} />
@@ -28,7 +28,7 @@ export default function ProjectClient({ data }: Props) {
             <span className={styles.skills}>{data}</span>
           </div>
         );
-      })} */}
+      })}
     </div>
   );
 }

@@ -71,14 +71,14 @@ export default function Footer(): JSX.Element {
               color={iconColor}
             />
           </div>
-          <div className={styles.icon} onClick={onIconClick}>
+          {/* <div className={styles.icon} onClick={onIconClick}>
             <ReactQueryIcon
               className={"reactqueryIcon"}
               width={iconWidth}
               height={iconHeight}
               color={iconColor}
             />
-          </div>
+          </div> */}
         </div>
         <div className={styles.textBottom}>and deployed on Oracle Cloud</div>
       </div>

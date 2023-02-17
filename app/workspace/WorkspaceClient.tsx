@@ -45,7 +45,7 @@ export default function WorkspaceClient({ projectList }: ProjectListData) {
   // }, []);
 
   return (
-    <div className={styles.Main}>
+    <div className={styles.Workspace}>
       <Intro ref={introRef} props={null} />
       <Specialty ref={specialtyRef} props={null} />
       <Projects ref={projectsRef} projectList={projectList} />

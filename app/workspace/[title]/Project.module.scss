@@ -44,3 +44,11 @@
     margin: 0 0 10px 10px;
   }
 }
+
+.NotFoundError {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
