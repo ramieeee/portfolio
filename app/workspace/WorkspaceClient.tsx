@@ -1,10 +1,6 @@
 "use client";
 import { useRef, useEffect } from "react";
-
-// i18next
-// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 // components
 import Intro from "@/components/Intro/Intro";
@@ -32,21 +28,21 @@ interface ProjectListData {
 
 export default function WorkspaceClient({ projectList }: ProjectListData) {
   const router = useRouter();
-  const changeTo = router.locale === "en" ? "kr" : "en";
+  // const changeTo = router.locale === "en" ? "kr" : "en";
 
   const introRef = useRef<HTMLDivElement>(null);
   const specialtyRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    console.log(localStorage.getItem("currentLang"));
-    if (!localStorage.getItem("currentLang")) {
-      localStorage.setItem("currentLang", "en");
-    } else if (localStorage.getItem("currentLang")) {
-      router.locale = localStorage?.getItem("currentLang") as string;
-    }
-  }, []);
+  // useEffect(() => {
+  //   console.log(localStorage.getItem("currentLang"));
+  //   if (!localStorage.getItem("currentLang")) {
+  //     localStorage.setItem("currentLang", "en");
+  //   } else if (localStorage.getItem("currentLang")) {
+  //     router.locale = localStorage?.getItem("currentLang") as string;
+  //   }
+  // }, []);
 
   return (
     <div className={styles.Main}>
@@ -58,9 +54,9 @@ export default function WorkspaceClient({ projectList }: ProjectListData) {
 
       {/* icon navigation */}
       <div className={styles.iconContainer}>
-        <Link href="" locale={changeTo} style={{ textDecoration: "none" }}>
+        {/* <Link href="" locale={changeTo} style={{ textDecoration: "none" }}>
           <LangToggle />
-        </Link>
+        </Link> */}
         <div
           onClick={() => {
             introRef.current?.scrollIntoView({ behavior: "smooth" });

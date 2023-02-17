@@ -1,27 +1,12 @@
 import WorkspaceClient from "./WorkspaceClient";
 
 export default async function Workspace() {
-  // useQuery({
-  //   queryKey: ["projectList"],
-  //   queryFn: () => {
-  //     return projectList;
-  //   },
-  // });
-
-  // SSR & translation
-
-  // const projectListData = await fetch(
-  //   "http://localhost:3000/api/projectlist"
-  // ).then((data) => {
-  //   return data;
-  // });
-  // const projectList = await JSON.stringify(projectListData.json());
-  // projectList: list?.data.resData,
+  const projectListData = await fetch("http://localhost:3000/api/projectlist");
+  const projectList = await projectListData.json();
 
   return (
     <>
-      <span>hi</span>
-      {/* <WorkspaceClient projectList={projectList} /> */}
+      <WorkspaceClient projectList={projectList.resData} />
     </>
   );
 }

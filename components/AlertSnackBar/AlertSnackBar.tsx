@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import styles from "./Snackbar.module.scss";
 import SnackbarObj from "@/interface/SnackbarObj";
 
@@ -7,16 +10,24 @@ interface OnOff {
 }
 
 export default function AlertSnackBar({ isSnackbarOn, snackbarProps }: OnOff) {
+  const [color, setColor] = useState<string>("#000000");
+  const [textShadow, setTextShadow] = useState<string>("#000000");
+
+  useEffect(() => {
+    setColor(snackbarProps.color);
+    setTextShadow(snackbarProps.textShadow);
+  }, [snackbarProps]);
+
   return (
     <div
       className={isSnackbarOn ? styles.snackbarBlink : styles.Snackbar}
       style={{
-        textShadow: snackbarProps.textShadow,
+        textShadow: textShadow,
       }}
     >
       <div
         style={{
-          color: snackbarProps.color,
+          color: color,
         }}
       >
         {snackbarProps.message}

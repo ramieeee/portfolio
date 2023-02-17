@@ -1,6 +1,5 @@
 import { useEffect, useState, forwardRef, useRef } from "react";
 import styles from "./Contact.module.scss";
-import axios, { AxiosResponse } from "axios";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -97,34 +96,39 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
     setBody(e.target.value);
   };
 
-  // const sendMutation = useMutation({
-  //   mutationFn: () => {
-  //     const payload = {
-  //       name: name,
-  //       email: email,
-  //       body: body,
-  //     };
+  const sendData = async () => {
+    const payload = {
+      name: name,
+      email: email,
+      body: body,
+    };
 
-  //     return axios.post("/api/message", payload);
-  //   },
-  //   onSuccess: (data: AxiosResponse) => {
-  //     setSnackbarProps({
-  //       message: "successfully sent",
-  //       color: "#86ff9a",
-  //       textShadow: "0 0 10px #3cff5c, 0 0 20px #3cff5c, 0 0 30px #3cff5c",
-  //     });
-  //     setName("");
-  //     setEmail("");
-  //     setBody("");
-  //   },
-  //   onError: (e: AxiosResponse) => {
-  //     setSnackbarProps({
-  //       message: "Error. Try again",
-  //       color: "#f28888",
-  //       textShadow: "0 0 10px #f34848, 0 0 20px #f34848, 0 0 30px #f34848",
-  //     });
-  //   },
-  // });
+    const response = await fetch("/api/message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+    const res = await response.json();
+
+    if (res.status === 200) {
+      setSnackbarProps({
+        message: "successfully sent",
+        color: "#86ff9a",
+        textShadow: "0 0 10px #3cff5c, 0 0 20px #3cff5c, 0 0 30px #3cff5c",
+      });
+      setName("");
+      setEmail("");
+      setBody("");
+    } else {
+      setSnackbarProps({
+        message: "Error. Try again",
+        color: "#f28888",
+        textShadow: "0 0 10px #f34848, 0 0 20px #f34848, 0 0 30px #f34848",
+      });
+    }
+  };
 
   //message, color, boxshadow
   const onBtnClick = () => {
@@ -139,8 +143,7 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
       handleSnackbar();
     } else {
       handleSnackbar();
-      // sendMutation.mutate();
-      // 여기서 post request 날리는 부분 구현
+      sendData();
     }
   };
 
@@ -148,6 +151,11 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
     setIsSnackbarOn(true);
     setTimeout(() => {
       setIsSnackbarOn(false);
+      setSnackbarProps({
+        message: "",
+        color: "",
+        textShadow: "",
+      });
     }, 3000);
   };
 

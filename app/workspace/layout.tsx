@@ -1,4 +1,4 @@
-import styles from "./Workspace.module.scss";
+import Logo from "@/components/Logo/Logo";
 
 export default function RootLayout({
   children,
@@ -6,14 +6,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <span className={styles.logo}>SausageDog</span>;
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
-    </html>
+    <>
+      <Logo />
+      {children}
+    </>
   );
 }

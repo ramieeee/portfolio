@@ -12,6 +12,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData | ErrRes>
 ) {
+  if (req.headers["content-type"] !== "application/json") {
+    return res.status(400).json({
+      message: "Data type is not json",
+      status: 400,
+    });
+  }
+
   if (req.method === "POST") {
     const sendPost = await prisma.messageList.create({
       data: {

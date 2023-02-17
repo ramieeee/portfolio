@@ -4,15 +4,11 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import { useTranslation } from "next-i18next";
-
 interface Props {
   props: null;
 }
 
 const Intro = forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const { t } = useTranslation("common");
-
   const nameRef = useRef<HTMLDivElement>(null);
   const textLeftRef = useRef<HTMLElement>(null);
   const textRightRef = useRef<HTMLElement>(null);
@@ -79,7 +75,7 @@ const Intro = forwardRef<HTMLDivElement, Props>((props, ref) => {
             engineer. I am also a postgraduate student majoring in AI
           </span>
           <span className={styles.introTextRight} ref={textRightRef}>
-            {t("INTRO_KEYWORDS")}
+            {/* {t("INTRO_KEYWORDS")} */}
           </span>
         </div>
         <div className={styles.line} ref={underlineRef} />
