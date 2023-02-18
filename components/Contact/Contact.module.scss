@@ -15,12 +15,14 @@
 
   .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 5vw;
+
     margin-top: 10vw;
     height: 80%;
 
     .textContainer {
-      width: 40vw;
+      width: 30vw;
 
       .line {
         border-bottom: #ffffff 1px solid;

@@ -1,9 +1,18 @@
+"use client";
+import { MouseEventHandler } from "react";
 import styles from "./Logo.module.scss";
+import DachshundIcon from "@/components/icons/DachshundIcon/DachshundIcon";
 
-export default function Logo() {
+interface OnClick {
+  onClick: MouseEventHandler<HTMLDivElement>;
+}
+
+export default function Logo({ onClick }: OnClick) {
   return (
     <>
-      <p className={styles.Logo}>SausageDog</p>
+      <div className={styles.Logo} onClick={onClick}>
+        <DachshundIcon width="40px" height="40px" color="#ffffff" />
+      </div>
     </>
   );
 }

@@ -165,7 +165,7 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
 
       <div className={styles.container}>
         <div className={styles.textContainer}>
-          <span className={styles.test} ref={textTopRef}>
+          <span ref={textTopRef}>
             If you ever feel like reaching me, send me a message
           </span>
           <div className={styles.line} ref={lineRef} />
