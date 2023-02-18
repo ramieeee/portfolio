@@ -1,5 +1,17 @@
 .Logo {
   position: absolute;
+  opacity: 0;
   top: 0;
   left: 0;
+  animation: logoAppearAni 1s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes logoAppearAni {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

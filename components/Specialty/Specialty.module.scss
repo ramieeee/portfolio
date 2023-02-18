@@ -20,13 +20,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 90px;
+    gap: 5vw;
 
     .specialtyBox {
+      height: 400px;
+      width: 280px;
+      padding: 10px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      // background: pink;
       cursor: pointer;
 
       .specialtyTitle {
@@ -34,6 +38,7 @@
         text-align: center;
         width: 266px;
         // font-family: antic !important;
+        font-family: var(--font-neon);
         color: #a2d2ff;
         text-shadow: 0 0 10px #5283ff, 0 0 20px #5283ff, 0 0 30px #5283ff;
         margin-bottom: 20px;

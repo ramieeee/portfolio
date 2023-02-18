@@ -51,6 +51,7 @@ const Intro = forwardRef<HTMLDivElement, Props>((props, ref) => {
       { width: "0px", transform: "translate(10vw)" },
       {
         width: "40vw",
+        opacity: "1",
         transform: "translate(0px)",
         delay: 1,
         duration: 0.4,
@@ -75,6 +76,7 @@ const Intro = forwardRef<HTMLDivElement, Props>((props, ref) => {
             engineer. I am also a postgraduate student majoring in AI
           </span>
           <span className={styles.introTextRight} ref={textRightRef}>
+            Web developer, Postgraduate student
             {/* {t("INTRO_KEYWORDS")} */}
           </span>
         </div>

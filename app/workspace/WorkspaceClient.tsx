@@ -7,7 +7,7 @@ import Intro from "@/components/Intro/Intro";
 import Specialty from "@/components/Specialty/Specialty";
 import Projects from "@/components/Projects/Projects";
 import Contact from "@/components/Contact/Contact";
-import LangToggle from "@/components/LangToggle/LangToggle";
+// import LangToggle from "@/components/LangToggle/LangToggle";
 import Footer from "@/components/Footer/Footer";
 
 // styles

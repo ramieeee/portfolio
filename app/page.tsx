@@ -16,7 +16,7 @@ export default function Landing() {
           setHomeClassName(null);
           setTimeout(() => {
             router.push("/workspace");
-          }, 300);
+          }, 1000);
         }}
       >
         <div className={styles.vidContainer}>

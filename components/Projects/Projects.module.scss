@@ -38,12 +38,12 @@
         border-radius: 30px;
         cursor: pointer;
 
-        &:hover {
-          animation-name: projectBoxAni;
-          animation-duration: 0.3s;
-          animation-direction: alternate;
-          animation-fill-mode: forwards;
-        }
+        // &:hover {
+        // animation-name: projectBoxAni;
+        // animation-duration: 0.3s;
+        // animation-direction: alternate;
+        // animation-fill-mode: forwards;
+        // }
 
         &:hover .projectTitle {
           animation-name: projectTitleAni;
@@ -59,16 +59,22 @@
         }
 
         .projectTitle {
-          color: var(--light-off-color);
+          // color: var(--light-off-color);
+          font-family: var(--font-neon);
           margin-bottom: 20px;
+          color: #a589bc;
+          text-shadow: 0 0 20px #9e2eff, 0 0 30px #9e2eff;
         }
 
         .projectCat {
-          color: var(--light-off-color);
+          // color: var(--light-off-color);
+          font-family: var(--font-neon);
           position: absolute;
           top: 0;
           right: 0;
           margin: 30px 30px 0 0;
+          color: #8d8d8d;
+          // text-shadow: 0 0 50px #453b4e;
         }
 
         .projectTitle,
@@ -80,14 +86,14 @@
   }
 }
 
-@keyframes projectBoxAni {
-  50% {
-    box-shadow: 0 0 10px #6922a7;
-  }
-  100% {
-    box-shadow: 0 0 3px 1px #6922a7;
-  }
-}
+// @keyframes projectBoxAni {
+//   50% {
+//     box-shadow: 0 0 10px #6922a7;
+//   }
+//   100% {
+//     box-shadow: 0 0 10px #6922a7;
+//   }
+// }
 
 @keyframes projectTitleAni {
   0% {

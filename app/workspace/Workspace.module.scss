@@ -3,6 +3,7 @@
 
   .iconContainer {
     display: flex;
+    opacity: 0;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -12,6 +13,8 @@
     height: 150px;
     margin-right: 20px;
     margin-bottom: 10px;
+    animation: iconAppearAni 1s forwards;
+    animation-delay: 2s;
 
     svg {
       cursor: pointer;
@@ -22,5 +25,14 @@
         filter: none;
       }
     }
+  }
+}
+
+@keyframes iconAppearAni {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

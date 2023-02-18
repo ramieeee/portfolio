@@ -36,18 +36,21 @@
         margin-right: 30px;
         text-align: right;
         width: 200px;
+        opacity: 0;
       }
       .introTextRight {
         font-size: 2rem;
         width: 350px;
+        opacity: 0;
       }
     }
 
     .line {
       display: inline-block;
-      margin: 30px 85% 0 10%;
+      margin: 30px 85% 0 5%;
       border-bottom: #ffffff solid 1px;
       width: 40vw;
+      opacity: 0;
     }
   }
 }
@@ -100,5 +103,9 @@
       width: 350px !important;
       font-size: 5vw !important;
     }
+  }
+  .line {
+    margin-left: 50px !important;
+    width: 60vw !important;
   }
 }
