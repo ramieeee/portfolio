@@ -22,11 +22,27 @@ import SkillsIcon from "@/components/icons/SkillsIcon/SkillsIcon";
 import ProjectsIcon from "@/components/icons/ProjectsIcon/ProjectsIcon";
 import ContactIcon from "@/components/icons/ContactIcon/ContactIcon";
 
-interface ProjectListData {
+interface ProjectListData extends SpecialtyData {
   projectList: ProjectList[];
 }
 
-export default function WorkspaceClient({ projectList }: ProjectListData) {
+interface SpecialtyData {
+  specialtyData: {
+    ai: {
+      title: string;
+      text: string;
+    };
+    web: {
+      title: string;
+      text: string;
+    };
+  };
+}
+
+export default function WorkspaceClient({
+  projectList,
+  specialtyData,
+}: ProjectListData) {
   const router = useRouter();
 
   const introRef = useRef<HTMLDivElement>(null);
@@ -37,7 +53,7 @@ export default function WorkspaceClient({ projectList }: ProjectListData) {
   return (
     <div className={styles.Workspace}>
       <Intro ref={introRef} props={null} />
-      <Specialty ref={specialtyRef} props={null} />
+      <Specialty ref={specialtyRef} specialtyData={specialtyData} />
       <Projects ref={projectsRef} projectList={projectList} />
       <Contact ref={contactRef} props={null} />
       <Footer />

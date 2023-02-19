@@ -9,7 +9,10 @@ export default async function Workspace() {
 
   return (
     <>
-      <WorkspaceClient projectList={projectList.resData} />
+      <WorkspaceClient
+        projectList={projectList.resData}
+        specialtyData={specialtyData}
+      />
     </>
   );
 }
