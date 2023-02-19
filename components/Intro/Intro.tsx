@@ -72,12 +72,15 @@ const Intro = forwardRef<HTMLDivElement, Props>((props, ref) => {
         </div>
         <div className={styles.introTextContainer}>
           <span className={styles.introTextLeft} ref={textLeftRef}>
-            Welcome! my name is Ramhee Yeon. I am a developer and a software
-            engineer. I am also a postgraduate student majoring in AI
+            Welcome! my name is Ramhee Yeon. I am a web developer and a software
+            engineer. I am also majoring in AI at graduate school
           </span>
           <span className={styles.introTextRight} ref={textRightRef}>
-            Web developer, Postgraduate student
-            {/* {t("INTRO_KEYWORDS")} */}
+            Web developer
+            <br />
+            Graduate student
+            <br />
+            Software engineer
           </span>
         </div>
         <div className={styles.line} ref={underlineRef} />

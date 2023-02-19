@@ -12,11 +12,12 @@ export default function Modal({
   handleModalClose,
 }: ModalToggle): JSX.Element {
   const [isFirst, setIsFirst] = useState<boolean>(true);
+
   const modalRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // 처음 렌더링 될때 close animation 되는것 제거
   useEffect(() => {
+    // 처음 렌더링 될때 close animation 되는것 제거
     if (isModalOpen && containerRef.current && modalRef.current) {
       if (isFirst) {
         setIsFirst(false);
@@ -67,7 +68,7 @@ export default function Modal({
     >
       <div className={styles.modalContainer} ref={containerRef}>
         <div className={styles.header}>
-          <span className={styles.title}>title</span>
+          <span className={styles.title}>{}</span>
           <div className={styles.closeBtn} onClick={handleClose}>
             <CloseBtnIcon width="30px" height="30px" color="#ffffff" />
           </div>

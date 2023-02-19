@@ -14,8 +14,9 @@ interface Props {
   props: null;
 }
 
-const Specialty = forwardRef<HTMLDivElement, Props>((props, ref) => {
+const Specialty = forwardRef<HTMLDivElement, Props>((specialtyData, ref) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
   const textLeftRef = useRef<HTMLElement>(null);
   const textRightRef = useRef<HTMLElement>(null);
   const underlineLeftRef = useRef<HTMLDivElement>(null);
