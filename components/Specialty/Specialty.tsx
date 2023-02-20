@@ -23,10 +23,18 @@ interface SpecialtyData {
   };
 }
 
+interface ModalData {
+  title: string;
+  text: string;
+}
+
 const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
   (specialtyData, ref) => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    const [modalData, setModalData] = useState<object>({ title: "", text: "" });
+    const [modalData, setModalData] = useState<ModalData>({
+      title: "",
+      text: "",
+    });
 
     const textLeftRef = useRef<HTMLElement>(null);
     const textRightRef = useRef<HTMLElement>(null);
@@ -82,6 +90,7 @@ const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
           },
         }
       );
+      console.log(specialtyData.specialtyData);
     }, []);
 
     const handleModalOpen = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -89,7 +98,16 @@ const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
       const parent = target.closest("div");
       const id = parent?.id as string;
 
-      if (id !== undefined) {
+      if (id === "ai") {
+        setModalData({
+          title: specialtyData.specialtyData.ai.title,
+          text: specialtyData.specialtyData.ai.text,
+        });
+      } else {
+        setModalData({
+          title: specialtyData.specialtyData.web.title,
+          text: specialtyData.specialtyData.web.text,
+        });
       }
 
       setIsModalOpen(true);
@@ -146,7 +164,7 @@ const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
         <Modal
           isModalOpen={isModalOpen}
           handleModalClose={handleModalClose}
-          // specialtyData={specialtyData}
+          modalData={modalData}
         />
       </div>
     );

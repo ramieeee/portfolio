@@ -2,14 +2,22 @@ import { useState, useRef, useEffect } from "react";
 import CloseBtnIcon from "@/components/icons/CloseBtnIcon/CloseBtnIcon";
 import styles from "./Modal.module.scss";
 
-interface ModalToggle {
+interface ModalToggle extends ModalData {
   isModalOpen: boolean;
   handleModalClose: Function;
+}
+
+interface ModalData {
+  modalData: {
+    title: string;
+    text: string;
+  };
 }
 
 export default function Modal({
   isModalOpen,
   handleModalClose,
+  modalData,
 }: ModalToggle): JSX.Element {
   const [isFirst, setIsFirst] = useState<boolean>(true);
 
@@ -17,7 +25,6 @@ export default function Modal({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // 처음 렌더링 될때 close animation 되는것 제거
     if (isModalOpen && containerRef.current && modalRef.current) {
       if (isFirst) {
         setIsFirst(false);
@@ -68,13 +75,13 @@ export default function Modal({
     >
       <div className={styles.modalContainer} ref={containerRef}>
         <div className={styles.header}>
-          <span className={styles.title}>{}</span>
+          <span className={styles.title}>{modalData.title}</span>
           <div className={styles.closeBtn} onClick={handleClose}>
             <CloseBtnIcon width="30px" height="30px" color="#ffffff" />
           </div>
         </div>
         <div className={styles.bodyContainer}>
-          <span className={styles.body}>body</span>
+          <span className={styles.body}>{modalData.text}</span>
         </div>
       </div>
     </div>

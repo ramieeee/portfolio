@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 // components
 import Intro from "@/components/Intro/Intro";
@@ -15,6 +15,7 @@ import styles from "./Workspace.module.scss";
 
 // interface
 import ProjectList from "@/interface/ProjectList";
+import SpecialtyData from "@/interface/SpecialtyData";
 
 // icons
 import HomeIcon from "@/components/icons/HomeIcon/HomeIcon";
@@ -26,24 +27,11 @@ interface ProjectListData extends SpecialtyData {
   projectList: ProjectList[];
 }
 
-interface SpecialtyData {
-  specialtyData: {
-    ai: {
-      title: string;
-      text: string;
-    };
-    web: {
-      title: string;
-      text: string;
-    };
-  };
-}
-
 export default function WorkspaceClient({
   projectList,
   specialtyData,
 }: ProjectListData) {
-  const router = useRouter();
+  // const router = useRouter();
 
   const introRef = useRef<HTMLDivElement>(null);
   const specialtyRef = useRef<HTMLDivElement>(null);
