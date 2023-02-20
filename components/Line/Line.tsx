@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import styles from "./Line.module.scss";
 
 interface Props {
   width: string;
@@ -9,7 +10,7 @@ interface Props {
 const Line = forwardRef<HTMLDivElement, Props>(
   ({ width, margin, borderBottom }, ref) => {
     return (
-      <div>
+      <>
         <div
           style={{
             width: width,
@@ -17,8 +18,9 @@ const Line = forwardRef<HTMLDivElement, Props>(
             borderBottom: borderBottom,
           }}
           ref={ref}
+          className={styles.Line}
         />
-      </div>
+      </>
     );
   }
 );

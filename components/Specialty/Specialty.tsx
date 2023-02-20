@@ -95,15 +95,17 @@ const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
 
     const handleModalOpen = (e: React.MouseEvent<HTMLDivElement>) => {
       const target = e.target as HTMLDivElement;
-      const parent = target.closest("div");
+      const parent = target.closest("[id]");
+
       const id = parent?.id as string;
+      console.log(id);
 
       if (id === "ai") {
         setModalData({
           title: specialtyData.specialtyData.ai.title,
           text: specialtyData.specialtyData.ai.text,
         });
-      } else {
+      } else if (id === "web") {
         setModalData({
           title: specialtyData.specialtyData.web.title,
           text: specialtyData.specialtyData.web.text,
@@ -139,7 +141,7 @@ const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
               Artificial Intelligence
             </span>
             <span className={styles.specialtyText} ref={textLeftRef}>
-              As a postgraduate student,
+              As a graduate student,
             </span>
           </div>
 

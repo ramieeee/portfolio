@@ -16,7 +16,7 @@
     position: fixed;
     opacity: 0;
     width: 50%;
-    height: 50%;
+    height: 70% !important;
     top: 0;
     bottom: 0;
     left: 0;
@@ -33,9 +33,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      .title {
+        color: #70b7f1;
+        font-family: var(--font-neon);
+        text-shadow: 0 0 10px #4ea6ef, 0 0 20px #4ea6ef;
+      }
     }
     .bodyContainer {
-      margin-top: 10px;
+      margin-top: 20px;
+      height: 85%;
+      overflow-y: scroll;
     }
   }
 }

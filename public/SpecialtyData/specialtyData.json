@@ -1,7 +1,11 @@
 {
   "ai": {
     "title": "Artificial Intelligence",
-    "text": "AI"
+    "text": [
+      "I am studying Artifitial intelligence at Soongsil univ",
+      "I am in the first year and digging into neurons",
+      "03. 2023 - current"
+    ]
   },
   "web": {
     "title": "Web Development",
