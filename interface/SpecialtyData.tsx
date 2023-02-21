@@ -2,11 +2,13 @@ export default interface SpecialtyData {
   specialtyData: {
     ai: {
       title: string;
-      text: string;
+      textInfo: string[];
+      textGoal: string[];
     };
     web: {
       title: string;
-      text: string;
+      textInfo: string[];
+      textGoal: string[];
     };
   };
 }

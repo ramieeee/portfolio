@@ -4,28 +4,18 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import SpecialtyData from "@/interface/SpecialtyData";
+
 // components
 import AiIcon from "@/components/icons/AiIcon/AiIcon";
 import CodingIcon from "@/components/icons/CodingIcon/CodingIcon";
 import Line from "@/components/Line/Line";
 import Modal from "@/components/Modal/Modal";
 
-interface SpecialtyData {
-  specialtyData: {
-    ai: {
-      title: string;
-      text: string;
-    };
-    web: {
-      title: string;
-      text: string;
-    };
-  };
-}
-
 interface ModalData {
   title: string;
-  text: string;
+  textInfo: string[];
+  textGoal: string[];
 }
 
 const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
@@ -33,7 +23,8 @@ const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [modalData, setModalData] = useState<ModalData>({
       title: "",
-      text: "",
+      textInfo: [],
+      textGoal: [],
     });
 
     const textLeftRef = useRef<HTMLElement>(null);
@@ -90,7 +81,6 @@ const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
           },
         }
       );
-      console.log(specialtyData.specialtyData);
     }, []);
 
     const handleModalOpen = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -98,17 +88,18 @@ const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
       const parent = target.closest("[id]");
 
       const id = parent?.id as string;
-      console.log(id);
 
       if (id === "ai") {
         setModalData({
           title: specialtyData.specialtyData.ai.title,
-          text: specialtyData.specialtyData.ai.text,
+          textInfo: specialtyData.specialtyData.ai.textInfo,
+          textGoal: specialtyData.specialtyData.ai.textGoal,
         });
       } else if (id === "web") {
         setModalData({
           title: specialtyData.specialtyData.web.title,
-          text: specialtyData.specialtyData.web.text,
+          textInfo: specialtyData.specialtyData.web.textInfo,
+          textGoal: specialtyData.specialtyData.web.textGoal,
         });
       }
 

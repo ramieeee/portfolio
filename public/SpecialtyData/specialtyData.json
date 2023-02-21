@@ -1,14 +1,23 @@
 {
   "ai": {
     "title": "Artificial Intelligence",
-    "text": [
-      "I am studying Artifitial intelligence at Soongsil univ",
-      "I am in the first year and digging into neurons",
-      "03. 2023 - current"
-    ]
+    "textInfo": [
+      "studying Artifitial intelligence at Soongsil graduate school",
+      "in the first year and digging into neurons",
+      "in school since 03. 2023 - current"
+    ],
+    "textGoal": ["to create real time learning AI model", "PhD"]
   },
   "web": {
     "title": "Web Development",
-    "text": "Web"
+    "textInfo": [
+      "a front-end developer in my company",
+      "developing web and it has been 1 year",
+      "building web with React"
+    ],
+    "textGoal": [
+      "to build web service utilizing AI models",
+      "to build my own App with React-native and launch"
+    ]
   }
 }

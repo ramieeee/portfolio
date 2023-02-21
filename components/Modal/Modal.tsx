@@ -10,7 +10,8 @@ interface ModalToggle extends ModalData {
 interface ModalData {
   modalData: {
     title: string;
-    text: string;
+    textInfo: string[];
+    textGoal: string[];
   };
 }
 
@@ -80,8 +81,32 @@ export default function Modal({
             <CloseBtnIcon width="30px" height="30px" color="#ffffff" />
           </div>
         </div>
+
         <div className={styles.bodyContainer}>
-          <span className={styles.body}>{modalData.text}</span>
+          <div className={styles.bodyBox}>
+            <div className={styles.bodyTitle}>
+              <span>I am</span>
+            </div>
+            {modalData.textInfo.map((data) => {
+              return (
+                <span key={data} className={styles.bodyText}>
+                  {data}
+                </span>
+              );
+            })}
+          </div>
+          <div className={styles.bodyBox}>
+            <div className={styles.bodyTitle}>
+              <span>My goal is</span>
+            </div>
+            {modalData.textGoal.map((data) => {
+              return (
+                <div key={data} className={styles.bodyText}>
+                  <span>{data}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
