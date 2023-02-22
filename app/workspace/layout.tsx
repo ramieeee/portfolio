@@ -1,6 +1,7 @@
 "use client";
 import Logo from "@/components/Logo/Logo";
 import { useRouter } from "next/navigation";
+import StarIcon from "@/components/icons/StarIcon/StarIcon";
 
 export default function RootLayout({
   children,
@@ -16,6 +17,7 @@ export default function RootLayout({
           router.push("/workspace");
         }}
       />
+      {/* <StarIcon width="60%" height="60%" color="#ffffff" /> */}
       {children}
     </>
   );

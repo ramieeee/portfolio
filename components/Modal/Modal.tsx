@@ -1,6 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import CloseBtnIcon from "@/components/icons/CloseBtnIcon/CloseBtnIcon";
 import styles from "./Modal.module.scss";
+
+// icons
+import CloseBtnIcon from "@/components/icons/CloseBtnIcon/CloseBtnIcon";
+import DotIcon from "@/components/icons/DotIcon/DotIcon";
 
 interface ModalToggle extends ModalData {
   isModalOpen: boolean;
@@ -87,25 +90,35 @@ export default function Modal({
             <div className={styles.bodyTitle}>
               <span>I am</span>
             </div>
-            {modalData.textInfo.map((data) => {
-              return (
-                <span key={data} className={styles.bodyText}>
-                  {data}
-                </span>
-              );
-            })}
+            <div className={styles.bodyTextContainer}>
+              {modalData.textInfo.map((data) => {
+                return (
+                  <div key={data} className={styles.bodyText}>
+                    <div className={styles.dot}>
+                      <DotIcon width="5px" height="5px" color="#ffffff" />
+                    </div>
+                    <span>{data}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <div className={styles.bodyBox}>
             <div className={styles.bodyTitle}>
               <span>My goal is</span>
             </div>
-            {modalData.textGoal.map((data) => {
-              return (
-                <div key={data} className={styles.bodyText}>
-                  <span>{data}</span>
-                </div>
-              );
-            })}
+            <div className={styles.bodyTextContainer}>
+              {modalData.textGoal.map((data) => {
+                return (
+                  <div key={data} className={styles.bodyText}>
+                    <div className={styles.dot}>
+                      <DotIcon width="5px" height="5px" color="#ffffff" />
+                    </div>
+                    <span>{data}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

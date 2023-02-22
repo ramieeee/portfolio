@@ -33,6 +33,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 30px;
       .title {
         color: #70b7f1;
         font-family: var(--font-neon);
@@ -49,10 +50,20 @@
       gap: 30px;
       .bodyBox {
         .bodyTitle {
+          margin-bottom: 30px;
         }
-        .bodyText {
-          color: grey;
-          padding-left: 50px;
+        .bodyTextContainer {
+          padding-left: 30px;
+          .bodyText {
+            color: rgb(173, 173, 173);
+            margin-bottom: 20px;
+            display: flex;
+            .dot {
+              margin-right: 10px;
+              filter: drop-shadow(0 0 5px #ffffff);
+            }
+            // justify-content: center;
+          }
         }
       }
     }
