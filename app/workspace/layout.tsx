@@ -17,7 +17,7 @@ export default function RootLayout({
           router.push("/workspace");
         }}
       />
-      {/* <StarIcon width="60%" height="60%" color="#ffffff" /> */}
+      <StarIcon width="60%" height="60%" color="#6fa8ff" />
       {children}
     </>
   );

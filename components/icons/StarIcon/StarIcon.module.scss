@@ -1,4 +1,26 @@
-.StarIcon {
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
-  filter: drop-shadow(0 0 10px #827cfb);
+  opacity: 0;
+  animation: starAni 1s forwards;
+  animation-delay: 2.3s;
+
+  .starIcon {
+    filter: drop-shadow(0 0 10px #6fa8ff);
+    transform: rotate(10deg);
+    // color: #4ca0ff;
+  }
+}
+
+@keyframes starAni {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
