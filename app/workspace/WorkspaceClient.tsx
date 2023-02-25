@@ -31,8 +31,6 @@ export default function WorkspaceClient({
   projectList,
   specialtyData,
 }: ProjectListData) {
-  // const router = useRouter();
-
   const introRef = useRef<HTMLDivElement>(null);
   const specialtyRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -45,7 +43,6 @@ export default function WorkspaceClient({
       <Projects ref={projectsRef} projectList={projectList} />
       <Contact ref={contactRef} props={null} />
       <Footer />
-
       {/* icon navigation */}
       <div className={styles.iconContainer}>
         {/* <Link href="" locale={changeTo} style={{ textDecoration: "none" }}>

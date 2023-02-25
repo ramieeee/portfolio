@@ -1,6 +1,6 @@
 .Project {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   margin-left: 10vw;
 
   .logo {
@@ -31,7 +31,7 @@
   }
 
   .skillsTextContainer {
-    margin: 10vw 0 20px 0;
+    margin: 50px 0 20px 0;
     .skillsText {
       font-family: var(--font-neon);
       font-size: 1.3rem;

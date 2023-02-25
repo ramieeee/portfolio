@@ -9,8 +9,8 @@
     padding-top: 8%;
     font-size: 1.5rem;
     margin-left: 15vw;
-    color: #ffc7da;
-    text-shadow: 0 0 10px #49ffa7, 0 0 20px #ff4986, 0 0 30px #ff4986;
+    color: #ff8cc9;
+    text-shadow: 0 0 10px #d23d8c, 0 0 20px #d23d8c, 0 0 30px #d23d8c;
   }
 
   .container {
@@ -33,16 +33,16 @@
           text-decoration: none;
           font-family: var(--font-neon);
           font-size: 1.5rem;
-          color: #faff5b;
-          text-shadow: 0 0 10px #f8ff26, 0 0 20px #f8ff26;
+          color: #7980fd;
+          text-shadow: 0 0 10px #535cff, 0 0 20px #535cff;
           &:hover {
-            color: #feffe2;
-            text-shadow: 0 0 10px #fcffa7, 0 0 20px #fcffa7, 0 0 30px #fcffa7,
+            color: #bcbfff;
+            text-shadow: 0 0 10px #8c92ff, 0 0 20px #8c92ff, 0 0 30px #8c92ff,
               0 0 40px #fcffa7;
           }
           &:active {
-            color: #faff5b;
-            text-shadow: 0 0 10px #f8ff26, 0 0 20px #f8ff26;
+            color: #7980fd;
+            text-shadow: 0 0 10px #535cff, 0 0 20px #535cff;
           }
         }
       }
@@ -88,15 +88,15 @@
         background: none;
         border-style: none;
         border-radius: 4px;
-        box-shadow: 0 0 10px #2ef5ff, 0 0 5px #2ef5ff inset;
-        text-shadow: 0 0 10px #2ef5ff, 0 0 20px #2ef5ff, 0 0 30px #2ef5ff;
+        box-shadow: 0 0 10px #00ff40, 0 0 5px #00ff40 inset;
+        text-shadow: 0 0 10px #00ff40;
         &:hover {
           color: #bff9ff;
-          text-shadow: 0 0 10px #2ef5ff, 0 0 20px #2ef5ff, 0 0 30px #2ef5ff,
-            0 0 40px #2ef5ff, 0 0 50px #2ef5ff, 0 0 60px #2ef5ff;
+          text-shadow: 0 0 10px #00ff40, 0 0 20px #00ff40, 0 0 30px #00ff40,
+            0 0 40px #00ff40, 0 0 50px #00ff40, 0 0 60px #00ff40;
         }
         &:active {
-          text-shadow: 0 0 10px #2ef5ff, 0 0 20px #2ef5ff, 0 0 30px #2ef5ff;
+          text-shadow: 0 0 10px #00ff40, 0 0 20px #00ff40, 0 0 30px #00ff40;
         }
       }
 
