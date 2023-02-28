@@ -12,13 +12,11 @@ interface Props {
 export default function Logo({ onClick, isLogo }: Props) {
   return (
     <>
-      <div className={styles.Logo} onClick={onClick}>
-        <DachshundIcon
-          width="40px"
-          height="40px"
-          color="#ffffff"
-          isLogo={isLogo}
-        />
+      <div
+        className={isLogo === "1" ? styles.LogoAppear : styles.LogoDisappear}
+        onClick={onClick}
+      >
+        <DachshundIcon width="40px" height="40px" color="#ffffff" />
       </div>
     </>
   );

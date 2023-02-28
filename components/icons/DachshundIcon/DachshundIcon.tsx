@@ -1,17 +1,14 @@
 import SvgProps from "@/interface/SvgProps";
-
-interface Props extends SvgProps {
-  isLogo: string;
-}
+import styles from "./DachshundIcon.module.scss";
 
 export default function DachshundIcon({
   width,
   height,
   color,
-  isLogo,
-}: Props): JSX.Element {
+}: SvgProps): JSX.Element {
   return (
-    <div style={{ opacity: isLogo, transition: "opacity 1s" }}>
+    <div className={styles.DachshundIcon}>
+      {/* <div style={{ opacity: isLogo, transition: "opacity 1s" }}> */}
       <svg
         fill={color}
         height={height}
