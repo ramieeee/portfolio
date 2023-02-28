@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 // import { useRouter } from "next/navigation";
 
 // components
@@ -45,9 +45,6 @@ export default function WorkspaceClient({
       <Footer />
       {/* icon navigation */}
       <div className={styles.iconContainer}>
-        {/* <Link href="" locale={changeTo} style={{ textDecoration: "none" }}>
-          <LangToggle />
-        </Link> */}
         <div
           onClick={() => {
             introRef.current?.scrollIntoView({ behavior: "smooth" });

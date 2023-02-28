@@ -1,22 +1,28 @@
 import SvgProps from "@/interface/SvgProps";
 
+interface Props extends SvgProps {
+  isLogo: string;
+}
+
 export default function DachshundIcon({
   width,
   height,
   color,
-}: SvgProps): JSX.Element {
+  isLogo,
+}: Props): JSX.Element {
   return (
-    <svg
-      fill={color}
-      height={height}
-      width={width}
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      viewBox="0 0 482.877 482.877"
-      xmlSpace="preserve"
-    >
-      <path
-        d="M482.129,131.242c-1.095-2.264-3.251-3.828-5.743-4.167l-40.38-5.484c-5.216-0.708-9.409-4.465-10.686-9.57
+    <div style={{ opacity: isLogo, transition: "opacity 1s" }}>
+      <svg
+        fill={color}
+        height={height}
+        width={width}
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 482.877 482.877"
+        xmlSpace="preserve"
+      >
+        <path
+          d="M482.129,131.242c-1.095-2.264-3.251-3.828-5.743-4.167l-40.38-5.484c-5.216-0.708-9.409-4.465-10.686-9.57
 	c-0.505-2.019-1.825-3.737-3.646-4.744c-1.438-0.795-35.549-19.273-64.302-1.112c-24.159,15.259-47.777,59.42-53.016,69.635
 	c-12.724,7.195-44.204,21.931-64.441,18.637c-23.125-3.765-109.376-13.822-145.386-17.971c-15.872-1.83-31.65,0.467-45.629,6.64
 	c-9.684,4.276-17.493,9.807-23.356,16.523c-2.502,2.124-11.011,9.85-17.507,21.787c-10.209,18.761-10.702,38.929-1.428,58.325
@@ -54,7 +60,8 @@ export default function DachshundIcon({
 	c0.251-0.508,25.369-50.966,48.613-65.647c17.443-11.015,39.219-2.937,46.519,0.343c0.069,0.175,0.151,0.343,0.224,0.516
 	l-6.646,2.42c-3.893,1.417-5.899,5.721-4.482,9.613c1.109,3.046,3.984,4.936,7.049,4.936c0.852,0,1.718-0.146,2.564-0.455
 	l11.604-4.225c3.45,2.313,7.448,3.871,11.774,4.458l29.17,3.962L460.041,145.675z"
-      />
-    </svg>
+        />
+      </svg>
+    </div>
   );
 }
