@@ -174,6 +174,7 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
             <a
               href="https://github.com/ramieeee"
               target="_blank"
+              rel="noreferrer"
               className={styles.linkGlow}
             >
               Github
@@ -182,6 +183,7 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
             <a
               href="https://www.notion.so/ramieeee/Hey-26c0b8e94dce4543b0bb50abf571b0cf"
               target="_blank"
+              rel="noreferrer"
               className={styles.linkGlow}
             >
               Notion
@@ -235,4 +237,5 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
   );
 });
 
+Contact.displayName = "Contact";
 export default Contact;

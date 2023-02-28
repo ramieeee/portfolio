@@ -60,6 +60,7 @@ const Projects = forwardRef<HTMLDivElement, Props>((props, ref) => {
                 <a
                   href={project.url}
                   target="_blank"
+                  rel="noreferrer"
                   className={styles.projectUrl}
                 ></a>
               </div>
@@ -72,5 +73,7 @@ const Projects = forwardRef<HTMLDivElement, Props>((props, ref) => {
     </div>
   );
 });
+
+Projects.displayName = "Projects";
 
 export default Projects;

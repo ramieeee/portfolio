@@ -164,4 +164,6 @@ const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
   }
 );
 
+Specialty.displayName = "Specialty";
+
 export default Specialty;

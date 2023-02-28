@@ -89,4 +89,6 @@ const Intro = forwardRef<HTMLDivElement, Props>((props, ref) => {
   );
 });
 
+Intro.displayName = "Intro";
+
 export default Intro;

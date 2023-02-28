@@ -25,4 +25,6 @@ const Line = forwardRef<HTMLDivElement, Props>(
   }
 );
 
+Line.displayName = "Line";
+
 export default Line;
