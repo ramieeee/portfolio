@@ -1,0 +1,25 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: postgresdev
+      POSTGRES_USER: postgresdev
+      POSTGRES_DB: portfolio
+    container_name: postgres
+    networks:
+      - con-network
+  app:
+    build: .
+    environment:
+      DATABASE_URL: postgres://postgresdev:postgresdev@db:5432/portfolio?schema=public
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    container_name: app
+    networks:
+      - con-network
+networks:
+  con-network:
+    driver: bridge
