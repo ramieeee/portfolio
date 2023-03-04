@@ -3,9 +3,7 @@ import ProjectList from "@/interface/ProjectList";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-  const projectListData = await fetch(
-    `${process.env.BASE_API_URL}/api/projectlist`
-  );
+  const projectListData = await fetch(`http://localhost:3000/api/projectlist`);
   const projectList = await projectListData.json();
 
   const list = projectList.resData.filter((project: ProjectList) => {
@@ -24,7 +22,7 @@ export default async function Project({
 }) {
   const title = params.title;
   const data = await fetch(
-    `${process.env.BASE_API_URL}/api/confidentialProjects?title=${title}`
+    `http://localhost:3000/api/confidentialProjects?title=${title}`
   );
   const dataDetails = await data.json();
   if (dataDetails.resData === null) {
