@@ -15,8 +15,8 @@
   .modalContainer {
     position: fixed;
     opacity: 0;
-    width: 50%;
-    height: 70%;
+    width: 400px;
+    height: 450px;
     top: 0;
     bottom: 0;
     left: 0;
@@ -73,24 +73,24 @@
 @keyframes modalOnAni {
   0% {
     opacity: 0;
-    width: 20%;
-    height: 30%;
+    width: 300px;
+    height: 400px;
   }
   20% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-    width: 50%;
-    height: 70%;
+    width: 400px;
+    height: 450px;
   }
 }
 
 @keyframes modalOffAni {
   0% {
     opacity: 1;
-    width: 50%;
-    height: 70%;
+    width: 400px;
+    height: 450px;
   }
   30% {
     color: transparent;
@@ -100,14 +100,44 @@
   }
   100% {
     opacity: 0;
-    width: 20%;
-    height: 30%;
+    width: 200px;
+    height: 250px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .modalContainer {
-    width: 70% !important;
-    height: 70% !important;
+  @keyframes modalOnAni {
+    0% {
+      opacity: 0;
+      width: 50%;
+      height: 50%;
+    }
+    20% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      width: 80%;
+      height: 80%;
+    }
+  }
+
+  @keyframes modalOffAni {
+    0% {
+      opacity: 1;
+      width: 80%;
+      height: 80%;
+    }
+    30% {
+      color: transparent;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      width: 60%;
+      height: 60%;
+    }
   }
 }

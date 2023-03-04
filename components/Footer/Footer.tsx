@@ -80,7 +80,9 @@ export default function Footer(): JSX.Element {
             />
           </div> */}
         </div>
-        <div className={styles.textBottom}>and deployed on Oracle Cloud</div>
+        <div className={styles.textBottom}>
+          and deployed on Oracle Cloud and Docker
+        </div>
       </div>
     </>
   );
