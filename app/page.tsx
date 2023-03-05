@@ -36,6 +36,7 @@ export default function Landing() {
         <div className={styles.textDiv}>
           <p className={styles.textTop}>RAMHEE</p>
           <p className={styles.textBottom}>YEON</p>
+          <p>click</p>
         </div>
       </div>
     </>

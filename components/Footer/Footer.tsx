@@ -80,8 +80,12 @@ export default function Footer(): JSX.Element {
             />
           </div> */}
         </div>
+
         <div className={styles.textBottom}>
           and deployed on Oracle Cloud and Docker
+        </div>
+        <div className={styles.versionInfo}>
+          <span>App version {process.env.NEXT_PUBLIC_PROJECT_VERSION}</span>
         </div>
       </div>
     </>
