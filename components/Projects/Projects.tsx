@@ -2,9 +2,9 @@ import { useEffect, useRef, forwardRef } from "react";
 import styles from "./Projects.module.scss";
 import ProjectList from "@/interface/ProjectList";
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
 
 interface Props {
   projectList: ProjectList[];
@@ -12,21 +12,21 @@ interface Props {
 
 const Projects = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const listRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    gsap.fromTo(
-      listRef.current,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        duration: 1,
-        delay: 0.5,
-        scrollTrigger: {
-          trigger: listRef.current,
-          start: 1000,
-        },
-      }
-    );
-  });
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     listRef.current,
+  //     { opacity: 0 },
+  //     {
+  //       opacity: 1,
+  //       duration: 1,
+  //       delay: 0.5,
+  //       scrollTrigger: {
+  //         trigger: listRef.current,
+  //         start: 1000,
+  //       },
+  //     }
+  //   );
+  // });
 
   const onProjectClick = (url: string, title: string) => {
     if (url !== "Confidential") {

@@ -28,7 +28,7 @@
 
     .textTop {
       font-family: anton !important;
-      font-size: 20vh;
+      font-size: 20vw;
       font-weight: 900;
       animation-name: textAni;
       animation-direction: normal;
@@ -38,7 +38,7 @@
 
     .textBottom {
       font-family: anton !important;
-      font-size: 20vh;
+      font-size: 20vw;
       font-weight: 900;
       animation-name: textAni;
       animation-direction: normal;
@@ -59,10 +59,10 @@
 
 @keyframes textAni {
   0% {
-    font-size: 21vh;
+    font-size: 21vw;
   }
   100% {
-    font-size: 20vh;
+    font-size: 20vw;
   }
 }
 

@@ -20,7 +20,6 @@ const Intro = forwardRef<HTMLDivElement, Props>((props, ref) => {
       scrollTrigger: {
         trigger: nameRef.current,
       },
-      keyframes: {},
     });
     gsap.fromTo(
       textLeftRef.current,
@@ -48,7 +47,7 @@ const Intro = forwardRef<HTMLDivElement, Props>((props, ref) => {
     );
     gsap.fromTo(
       underlineRef.current,
-      { width: "0px", transform: "translate(10vw)" },
+      { width: "0px", transform: "translate(5vw)" },
       {
         width: "40vw",
         opacity: "1",

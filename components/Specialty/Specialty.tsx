@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef, forwardRef } from "react";
 import styles from "./Specialty.module.scss";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
 
 import SpecialtyData from "@/interface/SpecialtyData";
 
@@ -32,56 +32,56 @@ const Specialty = forwardRef<HTMLDivElement, SpecialtyData>(
     const underlineLeftRef = useRef<HTMLDivElement>(null);
     const underlineRightRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-      gsap.fromTo(
-        textLeftRef.current,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 1,
-          delay: 0.5,
-          scrollTrigger: {
-            trigger: textLeftRef.current,
-          },
-        }
-      );
-      gsap.fromTo(
-        textRightRef.current,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          delay: 0.5,
-          duration: 1,
-          scrollTrigger: {
-            trigger: textRightRef.current,
-          },
-        }
-      );
-      gsap.fromTo(
-        underlineLeftRef.current,
-        { width: "0px" },
-        {
-          width: "40px",
-          delay: 0.8,
-          duration: 0.4,
-          scrollTrigger: {
-            trigger: underlineLeftRef.current,
-          },
-        }
-      );
-      gsap.fromTo(
-        underlineRightRef.current,
-        { width: "0px" },
-        {
-          width: "40px",
-          delay: 1,
-          duration: 0.4,
-          scrollTrigger: {
-            trigger: underlineRightRef.current,
-          },
-        }
-      );
-    }, []);
+    // useEffect(() => {
+    //   gsap.fromTo(
+    //     textLeftRef.current,
+    //     { opacity: 0 },
+    //     {
+    //       opacity: 1,
+    //       duration: 1,
+    //       delay: 0.5,
+    //       scrollTrigger: {
+    //         trigger: textLeftRef.current,
+    //       },
+    //     }
+    //   );
+    //   gsap.fromTo(
+    //     textRightRef.current,
+    //     { opacity: 0 },
+    //     {
+    //       opacity: 1,
+    //       delay: 0.5,
+    //       duration: 1,
+    //       scrollTrigger: {
+    //         trigger: textRightRef.current,
+    //       },
+    //     }
+    //   );
+    //   gsap.fromTo(
+    //     underlineLeftRef.current,
+    //     { width: "0px" },
+    //     {
+    //       width: "40px",
+    //       delay: 0.8,
+    //       duration: 0.4,
+    //       scrollTrigger: {
+    //         trigger: underlineLeftRef.current,
+    //       },
+    //     }
+    //   );
+    //   gsap.fromTo(
+    //     underlineRightRef.current,
+    //     { width: "0px" },
+    //     {
+    //       width: "40px",
+    //       delay: 1,
+    //       duration: 0.4,
+    //       scrollTrigger: {
+    //         trigger: underlineRightRef.current,
+    //       },
+    //     }
+    //   );
+    // }, []);
 
     const handleModalOpen = (e: React.MouseEvent<HTMLDivElement>) => {
       const target = e.target as HTMLDivElement;

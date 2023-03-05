@@ -1,9 +1,9 @@
 import { useEffect, useState, forwardRef, useRef } from "react";
 import styles from "./Contact.module.scss";
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
 
 // component
 import AlertSnackBar from "@/components/AlertSnackBar/AlertSnackBar";
@@ -31,58 +31,58 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const lineRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    gsap.fromTo(
-      textTopRef.current,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        delay: 0.3,
-        duration: 1,
-        scrollTrigger: {
-          trigger: textTopRef.current,
-        },
-      }
-    );
-    gsap.fromTo(
-      textBottomRef.current,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        delay: 0.5,
-        duration: 1,
-        scrollTrigger: {
-          trigger: textBottomRef.current,
-        },
-      }
-    );
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     textTopRef.current,
+  //     { opacity: 0 },
+  //     {
+  //       opacity: 1,
+  //       delay: 0.3,
+  //       duration: 1,
+  //       scrollTrigger: {
+  //         trigger: textTopRef.current,
+  //       },
+  //     }
+  //   );
+  //   gsap.fromTo(
+  //     textBottomRef.current,
+  //     { opacity: 0 },
+  //     {
+  //       opacity: 1,
+  //       delay: 0.5,
+  //       duration: 1,
+  //       scrollTrigger: {
+  //         trigger: textBottomRef.current,
+  //       },
+  //     }
+  //   );
 
-    gsap.fromTo(
-      lineRef.current,
-      { width: "0px", transform: "translate(8vw)" },
-      {
-        width: "100%",
-        transform: "translate(0px)",
-        delay: 0.8,
-        duration: 0.4,
-        scrollTrigger: {
-          trigger: lineRef.current,
-        },
-      }
-    );
-    gsap.fromTo(
-      formRef.current,
-      { opacity: 0 },
-      {
-        opacity: 1,
-        delay: 1,
-        duration: 2,
-        scrollTrigger: {
-          trigger: formRef.current,
-        },
-      }
-    );
-  }, []);
+  //   gsap.fromTo(
+  //     lineRef.current,
+  //     { width: "0px", transform: "translate(8vw)" },
+  //     {
+  //       width: "100%",
+  //       transform: "translate(0px)",
+  //       delay: 0.8,
+  //       duration: 0.4,
+  //       scrollTrigger: {
+  //         trigger: lineRef.current,
+  //       },
+  //     }
+  //   );
+  //   gsap.fromTo(
+  //     formRef.current,
+  //     { opacity: 0 },
+  //     {
+  //       opacity: 1,
+  //       delay: 1,
+  //       duration: 2,
+  //       scrollTrigger: {
+  //         trigger: formRef.current,
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   const onNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
