@@ -27,7 +27,7 @@
     mix-blend-mode: multiply;
 
     .textTop {
-      font-family: anton !important;
+      font-family: var(--font-landing) !important;
       font-size: 20vw;
       font-weight: 900;
       animation-name: textAni;
@@ -37,7 +37,7 @@
     }
 
     .textBottom {
-      font-family: anton !important;
+      font-family: var(--font-landing) !important;
       font-size: 20vw;
       font-weight: 900;
       animation-name: textAni;

@@ -1,3 +1,7 @@
 export default function Loading() {
-  return <div>{/* <span>loading...</span> */}</div>;
+  return (
+    <div>
+      <span>loading...</span>
+    </div>
+  );
 }
