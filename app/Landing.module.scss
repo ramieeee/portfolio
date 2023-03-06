@@ -6,6 +6,9 @@
 
   .vidContainer {
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .video {
       height: 100%;
@@ -28,7 +31,7 @@
 
     .textTop {
       font-family: var(--font-landing) !important;
-      font-size: 20vw;
+      font-size: max(400px, 20vw);
       font-weight: 900;
       animation-name: textAni;
       animation-direction: normal;
@@ -38,7 +41,7 @@
 
     .textBottom {
       font-family: var(--font-landing) !important;
-      font-size: 20vw;
+      font-size: max(20vw, 400px);
       font-weight: 900;
       animation-name: textAni;
       animation-direction: normal;
@@ -72,5 +75,12 @@
   }
   100% {
     transform: translateY(-100%);
+  }
+}
+
+@media (min-width: 1000px) {
+  .textTop,
+  .textBottom {
+    font-size: 200px !important;
   }
 }
