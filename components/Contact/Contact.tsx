@@ -178,6 +178,15 @@ const Contact = forwardRef<HTMLDivElement, Props>((props, ref) => {
               className={styles.linkGlow}
             >
               Github
+            </a>
+            {", "}
+            <a
+              href="https://www.linkedin.com/in/ramhee-yeon-b0433b147/"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.linkGlow}
+            >
+              Linkedin
             </a>{" "}
             and{" "}
             <a
