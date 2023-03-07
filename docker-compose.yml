@@ -9,15 +9,15 @@ services:
     container_name: postgres
     networks:
       - con-network
-  app:
-    build: .
+  nextjs13:
     environment:
-      DATABASE_URL: postgres://postgresdev:postgresdev@db:5432/portfolio?schema=public
+      DATABASE_URL: postgres://postgresdev:postgresdev@localhost:5432/portfolio?schema=public
+      BASE_API_URL: http://localhost:3000
     ports:
       - "3000:3000"
     depends_on:
       - db
-    container_name: app
+    container_name: nextjs13
     networks:
       - con-network
 networks:
