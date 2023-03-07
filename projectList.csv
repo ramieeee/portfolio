@@ -1,4 +1,4 @@
 1,AI,NL2OpenFrameBashCommand,Tool that helps the beginners of OpenFrame and its bash commands,OpenFrame 혹은 OF의 bash command의 초입자를 위한 툴,https://github.com/ramieeee/NL2OpenFrameBashCommand
 2,AI,Phishing Mail Detection,AI service that filters emails with phishing url through Sendmail server,Sendmail 서버를 통해 유입되는 피싱 url을 포함한 메일을 구분해내는 인공지능 서비스,https://github.com/ramieeee/phishing_mail_detection
 3,Web,DatasetManager,UI Tool for Mainframe Dataset migration to OpenFrame,메인프레임의 데이터셋을 OpenFrame으로 마이그레이션할 수 있게 도와주는 UI 툴,Confidential
-4,Web,Portfolio,This web page is my portfolio that you see now!,지금 보고계신 web page가 제 포트폴리오 입니다!,https://github.com/ramieeee/portfolio
+4,Web,Portfolio,"This web page you are seeing now is my portfolio. If you want to see the codes, you may check here",지금 보고계신 web page가 제 포트폴리오 입니다!,https://github.com/ramieeee/portfolio
