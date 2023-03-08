@@ -11,7 +11,7 @@ services:
       - con-network
   nextjs13:
     environment:
-      DATABASE_URL: postgres://postgresdev:postgresdev@localhost:5432/portfolio?schema=public
+      DATABASE_URL: postgres://postgresdev:postgresdev@db:5432/portfolio?schema=public
       BASE_API_URL: http://localhost:3000
     ports:
       - "3000:3000"
