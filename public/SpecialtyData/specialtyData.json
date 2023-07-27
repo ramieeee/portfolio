@@ -3,7 +3,7 @@
     "title": "Artificial Intelligence",
     "textInfo": [
       "studying Artifitial intelligence at Soongsil graduate school",
-      "in the first year and digging into neurons",
+      "digging into neurons. Currently working on NLP with CNN",
       "in school since 03. 2023 - current"
     ],
     "textGoal": ["to create real time learning AI model", "PhD"]
@@ -12,12 +12,12 @@
     "title": "Web Development",
     "textInfo": [
       "in a team that makes web UI tool in company",
-      "developing web and it has been over a year",
-      "building web with React"
+      "developing web since 2021 with Next.js 13",
+      "Working on React Native too to aim to launch a new app!"
     ],
     "textGoal": [
       "to build web service utilizing AI models",
-      "to build my own App with React-native and launch"
+      "to build my own App with React-native and expand the service"
     ]
   }
 }
