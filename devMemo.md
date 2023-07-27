@@ -13,3 +13,8 @@
 
 - prisma no lib error
   add `binaryTargets = ["native", "debian-openssl-1.1.x", "linux-musl"]` in generate client object
+
+# db info
+
+- postgresql
+- in postgresql container: psql portfolio -U postgresdev
