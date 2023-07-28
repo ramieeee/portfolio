@@ -6,6 +6,8 @@ services:
       POSTGRES_PASSWORD: postgresdev
       POSTGRES_USER: postgresdev
       POSTGRES_DB: portfolio
+    ports:
+      - "5432:5432"
     container_name: postgres
     networks:
       - con-network
